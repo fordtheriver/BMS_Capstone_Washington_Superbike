@@ -11874,3 +11874,123 @@ java.lang.ClassNotFoundException: org.eclipse.jgit.lfs.BuiltinLFS cannot be foun
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-04-12 11:54:42.952
 !MESSAGE No repository found at file:/C:/Users/bryan/Desktop/BMS%20Capstone/LaunchPad/CCS9.0.0.00018_win64/CCS9.0.0.00018_win64/baserepo/p2appfRepo/.
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-12 12:44:58.375
+!MESSAGE Indexed 'LTC6812_Com' (1 sources, 5 headers) in 0.891 sec: 843 declarations; 1,047 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:14.876
+!MESSAGE >>1555098314876 Ta: (ResourceExplorerPlugin::start discoverCCSPort()) took 31
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:14.892
+!MESSAGE Plugin start call t.start()
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:14.892
+!MESSAGE >>1555098314892 Tb: (ResourceExplorerPlugin::new Thread to start plugin 16
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:14.892
+!MESSAGE REX 1555098314892 [A:plugin start] Starting Server
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:14.907
+!MESSAGE REX [OS:plugin start] win32
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:14.907
+!MESSAGE REX [A] startServer()
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:14.939
+!MESSAGE REX [A-] ResourceExplorerPlugin.p == null
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:14.970
+!MESSAGE REX attempt_process_cleanup = true
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.407
+!MESSAGE REX 1555098315407 [killServerProcesses] 
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.407
+!MESSAGE REX 1555098315407 Tc: Utilities::startServer preamble515
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.423
+!MESSAGE REX 1555098315423 [D:plugin start] ccs_eclipse_folder: file:/C:/ti/ccs900/ccs/eclipse/
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.423
+!MESSAGE REX 1555098315423 [E:plugin start] ccs_eclipse_folder: C:/ti/ccs900/ccs/eclipse/
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.501
+!MESSAGE REX 1555098315501 Ti: Utilities::proxy 62
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.517
+!MESSAGE REX 1555098315517 These are the commands [C:\ti\ccs900\ccs\tirex/node.exe, app.js, C:\ti\ccs900\ccs\tirex\ti-rex-core/dinfra-desktop/dinfra.js, C:\ti\ccs900\ccs\tirex\ti-rex-core/config/dconfig_localserver.json, C:\ti\ccs900\ccs\tirex\ti-rex-core/config/app_localserver_win.json, --ccs_port=49285, --myHttpPort=55432, --logsDirUncaughtException=C:\Users\bryan\AppData\Local\TEXASI~1\CCS\ccs900\0\dmp\, --ccsVersion=9.0.0.00018, --tirexPluginVersion=4.1.0.201902061603]
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.517
+!MESSAGE REX 1555098315517 Td: Utilities::before pb.start() 94
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.548
+!MESSAGE REX 1555098315548 Te: Utilities::before isAlive loop 16
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.548
+!MESSAGE REX 1555098315548 Tf: Utilities::after ResourceExplorerPlugin.p.isAlive() loop 0
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.564
+!MESSAGE REX pollServerState for up or ready
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:15.579
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:17.142
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:18.689
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:20.235
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:21.782
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:23.329
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:24.876
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:26.423
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:26.516
+!MESSAGE REX 1555098326501 Utilities::sendGet Response Code from local server: 503
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:27.048
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:27.048
+!MESSAGE REX 1555098327048 Utilities::sendGet Response Code from local server: 503
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:27.579
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:30.449
+!MESSAGE REX 1555098330449 Utilities::sendGet Response Code from local server: 503
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:30.981
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:30.996
+!MESSAGE REX 1555098330996 Utilities::sendGet Response Code from local server: 503
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:31.496
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:31.496
+!MESSAGE REX 1555098331496 Utilities::sendGet Response Code from local server: 200
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:31.512
+!MESSAGE REX [serverStatus] ready
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:31.512
+!MESSAGE REX serverState is ready
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-12 12:45:31.527
+!MESSAGE REX 1555098331527 Tg: Utilities::after server isAlive 15963
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-12 13:16:22.373
+!MESSAGE Indexed 'PEC_Calculator' (1 sources, 5 headers) in 0.328 sec: 843 declarations; 1,047 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
