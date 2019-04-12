@@ -1,0 +1,25 @@
+
+**** Build of configuration Debug for project emptyProject ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/Bryan_CCS_Workspace/emptyProject" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/Bryan_CCS_Workspace/emptyProject/driverlib/MSP430F5xx_6xx" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power="none" --define=__MSP430F5529__ --define=DEPRECATED -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 12: error #141: too many arguments in function call
+"../main.c", line 13: error #20: identifier "BAUD_RATE" is undefined
+"../main.c", line 11: warning #169-D: argument of type "int" is incompatible with parameter of type "USCI_A_UART_initParam *"
+"../main.c", line 11: warning #154-D: conversion of nonzero integer to pointer
+"../main.c", line 12: error #141: too many arguments in function call
+"../main.c", line 27: error #20: identifier "transmitData" is undefined
+"../main.c", line 50: warning #225-D: function "USCI_A_UART_interruptStatus" declared implicitly
+"../main.c", line 54: error #20: identifier "receivedData" is undefined
+"../main.c", line 57: error #20: identifier "transmitData" is undefined
+6 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

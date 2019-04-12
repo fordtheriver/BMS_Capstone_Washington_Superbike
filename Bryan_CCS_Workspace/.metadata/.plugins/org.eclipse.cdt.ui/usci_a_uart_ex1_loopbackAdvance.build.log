@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project usci_a_uart_ex1_loopbackAdvance ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'usci_a_uart_ex1_loopbackAdvance.out' is up to date.
+
+**** Build Finished ****

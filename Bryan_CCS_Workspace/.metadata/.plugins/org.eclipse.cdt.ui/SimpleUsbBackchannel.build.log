@@ -1,0 +1,9 @@
+
+**** Build of configuration Release for project SimpleUsbBackchannel ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'SimpleUsbBackchannel.out' is up to date.
+gmake[1]: Nothing to be done for 'secondary-outputs'.
+
+**** Build Finished ****

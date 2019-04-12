@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project MSP430F55xx_uscia0_uart_04.c ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSP430F55xx_uscia0_uart_04.c.out' is up to date.
+
+**** Build Finished ****
