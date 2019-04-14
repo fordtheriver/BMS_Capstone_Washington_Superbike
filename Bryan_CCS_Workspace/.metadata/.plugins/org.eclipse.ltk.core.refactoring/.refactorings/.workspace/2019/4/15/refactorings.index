@@ -6,3 +6,6 @@
 1555098314329	Delete resource 'UART_with_Driver_Lib'
 1555098320720	Delete 2 resources
 1555100165530	Delete resource 'LTC6812_Com'
+1555109668328	Delete resource 'PEC_Calculator/PEC'
+1555109848747	Delete resource 'PEC_Calculator/PEC.h'
+1555109852954	Delete resource 'PEC_Calculator/PEC.c'

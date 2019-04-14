@@ -10,6 +10,8 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./PEC.obj" \
+"./UART_to_USB.obj" \
 "./main.obj" \
 "../lnk_msp430f5529.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -155,8 +157,8 @@ PEC_Calculator.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" 
-	-$(RM) "main.d" 
+	-$(RM) "PEC.obj" "UART_to_USB.obj" "main.obj" 
+	-$(RM) "PEC.d" "UART_to_USB.d" "main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

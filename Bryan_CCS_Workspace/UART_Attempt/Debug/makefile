@@ -135,7 +135,8 @@ BIN_OUTPUTS__QUOTED += \
 
 
 # All Target
-all: UART_Attempt.out
+all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+	@$(MAKE) --no-print-directory -Onone "UART_Attempt.out"
 
 # Tool invocations
 UART_Attempt.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)

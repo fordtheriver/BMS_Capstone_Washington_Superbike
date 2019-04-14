@@ -1,14 +1,8 @@
 
 **** Build of configuration Debug for project UART_Attempt ****
 
-"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 main.obj -O 
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
  
-Building file: "../main.c"
-Invoking: MSP430 Compiler
-"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
-"../main.c", line 80: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-"../main.c", line 81: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
-Finished building: "../main.c"
- 
+gmake[1]: 'UART_Attempt.out' is up to date.
 
 **** Build Finished ****
