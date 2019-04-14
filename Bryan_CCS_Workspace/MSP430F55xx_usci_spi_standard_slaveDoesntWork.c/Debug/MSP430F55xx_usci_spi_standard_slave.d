@@ -16,6 +16,7 @@ MSP430F55xx_usci_spi_standard_slave.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-
 MSP430F55xx_usci_spi_standard_slave.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/sys/_stdint.h
 MSP430F55xx_usci_spi_standard_slave.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h
 MSP430F55xx_usci_spi_standard_slave.obj: ../UART_to_USB.h
+MSP430F55xx_usci_spi_standard_slave.obj: C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/MSP430F55xx_usci_spi_standard_slaveDoesntWork.c/SPI.h
 
 ../MSP430F55xx_usci_spi_standard_slave.c: 
 C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430.h: 
@@ -33,3 +34,4 @@ C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/machine/_stdin
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/sys/_stdint.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h: 
 ../UART_to_USB.h: 
+C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/MSP430F55xx_usci_spi_standard_slaveDoesntWork.c/SPI.h: 

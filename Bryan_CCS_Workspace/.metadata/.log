@@ -13469,3 +13469,169 @@ No USB FET was found
 !ENTRY com.ti.ccstudio.debug 1 0 2019-04-14 15:34:09.388
 !MESSAGE DS_ERROR: MSP430: JTAG Communication Error 
 
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.209
+!MESSAGE >>1555283564209 Ta: (ResourceExplorerPlugin::start discoverCCSPort()) took 15
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.225
+!MESSAGE Plugin start call t.start()
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.240
+!MESSAGE >>1555283564240 Tb: (ResourceExplorerPlugin::new Thread to start plugin 15
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.240
+!MESSAGE REX 1555283564240 [A:plugin start] Starting Server
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.256
+!MESSAGE REX [OS:plugin start] win32
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.256
+!MESSAGE REX [A] startServer()
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.272
+!MESSAGE REX [A-] ResourceExplorerPlugin.p == null
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.272
+!MESSAGE REX attempt_process_cleanup = true
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.709
+!MESSAGE REX 1555283564709 [killServerProcesses] 
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.725
+!MESSAGE REX 1555283564725 Tc: Utilities::startServer preamble485
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.725
+!MESSAGE REX 1555283564725 [D:plugin start] ccs_eclipse_folder: file:/C:/ti/ccs900/ccs/eclipse/
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.725
+!MESSAGE REX 1555283564725 [E:plugin start] ccs_eclipse_folder: C:/ti/ccs900/ccs/eclipse/
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.834
+!MESSAGE REX 1555283564834 Ti: Utilities::proxy 94
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.850
+!MESSAGE REX 1555283564850 These are the commands [C:\ti\ccs900\ccs\tirex/node.exe, app.js, C:\ti\ccs900\ccs\tirex\ti-rex-core/dinfra-desktop/dinfra.js, C:\ti\ccs900\ccs\tirex\ti-rex-core/config/dconfig_localserver.json, C:\ti\ccs900\ccs\tirex\ti-rex-core/config/app_localserver_win.json, --ccs_port=49672, --myHttpPort=55432, --logsDirUncaughtException=C:\Users\bryan\AppData\Local\TEXASI~1\CCS\ccs900\0\dmp\, --ccsVersion=9.0.0.00018, --tirexPluginVersion=4.1.0.201902061603]
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.850
+!MESSAGE REX 1555283564850 Td: Utilities::before pb.start() 125
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.881
+!MESSAGE REX 1555283564881 Te: Utilities::before isAlive loop 16
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.881
+!MESSAGE REX 1555283564881 Tf: Utilities::after ResourceExplorerPlugin.p.isAlive() loop 0
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.897
+!MESSAGE REX pollServerState for up or ready
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:44.912
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:46.475
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:48.022
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:49.568
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:51.115
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:52.662
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:54.194
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:54.241
+!MESSAGE REX 1555283574241 Utilities::sendGet Response Code from local server: 503
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:54.741
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:54.741
+!MESSAGE REX 1555283574741 Utilities::sendGet Response Code from local server: 503
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:55.272
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:58.178
+!MESSAGE REX 1555283578178 Utilities::sendGet Response Code from local server: 503
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:58.694
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:58.709
+!MESSAGE REX 1555283578709 Utilities::sendGet Response Code from local server: 503
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:59.209
+!MESSAGE REX Sending 'GET' request to URL : http://127.0.0.1:55432/api/serverstate
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:59.209
+!MESSAGE REX 1555283579209 Utilities::sendGet Response Code from local server: 200
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:59.225
+!MESSAGE REX [serverStatus] ready
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:59.225
+!MESSAGE REX serverState is ready
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:12:59.241
+!MESSAGE REX 1555283579241 Tg: Utilities::after server isAlive 14344
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-14 16:37:32.392
+!MESSAGE DS_ERROR: MSP430: Error initializing emulator: A firmware update is required for the MSP430 Debug Interface (MSP-FET430UIF / MSP-FET / eZ-FET). Click the "Update" button to update the firmware and launch your debug session (this may require several update steps).  DO NOT UNPLUG THE INTERFACE DURING THE UPDATE.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-14 16:37:32.610
+!MESSAGE DS_ERROR: Error initializing emulator:
+A firmware update is required for the MSP430 Debug Interface (MSP-FET430UIF / MSP-FET / eZ-FET). Click the "Update" button to update the firmware and launch your debug session (this may require several update steps).
+
+DO NOT UNPLUG THE INTERFACE DURING THE UPDATE.
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-14 16:50:16.759
+!MESSAGE Indexed 'MSP430_Slave_SPI' (1 sources, 5 headers) in 0.219 sec: 843 declarations; 1,047 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-04-14 16:53:03.461
+!MESSAGE An internal error occurred during: "Update DS Progress Dialog".
+!STACK 0
+org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4552)
+	at org.eclipse.swt.SWT.error(SWT.java:4467)
+	at org.eclipse.swt.SWT.error(SWT.java:4438)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1182)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4564)
+	at com.ti.ccstudio.debug.internal.ui.ProjectUIDelegate$ConnectionDiagnosticDelegate$UpdateDSProgressDialog.run(ProjectUIDelegate.java:336)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-04-14 16:53:03.477
+!MESSAGE An internal error occurred during: "Update DS Progress Dialog".
+!STACK 0
+org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4552)
+	at org.eclipse.swt.SWT.error(SWT.java:4467)
+	at org.eclipse.swt.SWT.error(SWT.java:4438)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1182)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4564)
+	at com.ti.ccstudio.debug.internal.ui.ProjectUIDelegate$ConnectionDiagnosticDelegate$UpdateDSProgressDialog.run(ProjectUIDelegate.java:336)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-04-14 16:53:03.477
+!MESSAGE An internal error occurred during: "Update DS Progress Dialog".
+!STACK 0
+org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4552)
+	at org.eclipse.swt.SWT.error(SWT.java:4467)
+	at org.eclipse.swt.SWT.error(SWT.java:4438)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1182)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4564)
+	at com.ti.ccstudio.debug.internal.ui.ProjectUIDelegate$ConnectionDiagnosticDelegate$UpdateDSProgressDialog.run(ProjectUIDelegate.java:336)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:53:05.086
+!MESSAGE >>1555285985086  killing node server
+
+!ENTRY org.eclipse.e4.ui.workbench 1 0 2019-04-14 16:53:06.992
+!MESSAGE REX 1555285986992 Monitor thread discovered server process problem. Have set error page

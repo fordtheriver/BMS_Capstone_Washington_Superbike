@@ -11,6 +11,7 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./MSP430F55xx_usci_spi_standard_slave.obj" \
+"./SPI.obj" \
 "./UART_to_USB.obj" \
 "../lnk_msp430f5529.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -156,8 +157,8 @@ MSP430F55xx_usci_spi_standard_slaveDoesntWork.c.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "MSP430F55xx_usci_spi_standard_slave.obj" "UART_to_USB.obj" 
-	-$(RM) "MSP430F55xx_usci_spi_standard_slave.d" "UART_to_USB.d" 
+	-$(RM) "MSP430F55xx_usci_spi_standard_slave.obj" "SPI.obj" "UART_to_USB.obj" 
+	-$(RM) "MSP430F55xx_usci_spi_standard_slave.d" "SPI.d" "UART_to_USB.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

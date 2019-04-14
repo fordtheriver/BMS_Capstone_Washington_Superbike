@@ -1,1 +1,1 @@
-"./MSP430F55xx_usci_spi_standard_slave.obj" "./UART_to_USB.obj" "../lnk_msp430f5529.cmd" -llibmath.a -llibc.a 
+"./MSP430F55xx_usci_spi_standard_slave.obj" "./SPI.obj" "./UART_to_USB.obj" "../lnk_msp430f5529.cmd" -llibmath.a -llibc.a 
