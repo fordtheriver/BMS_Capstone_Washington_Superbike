@@ -33,39 +33,41 @@
 #include "UART_to_USB.h"
 #include <SPI.h>
 #include <PEC.h>
+#include <LTC6812.h>
 
 int main(void) {
     WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
 
-    uint8_t RDCFGA[2] = {0,2};
-
+    //Initializations
     initClockTo16MHz();
     initGPIO();
     initSPI();
     UARTinit();
     init_PEC15_Table();
 
-    P1OUT &= ~BIT5;                           // Now with SPI signals initialized,
-    __delay_cycles(100000);
-    P1OUT |= BIT5;                            // reset slave
-    __delay_cycles(100000);                   // Wait for slave to initialize
-
-    P1OUT |= BIT0;
-    //__bis_SR_register( GIE);       // CPU off, enable interrupt
     while(1){
 
-            uint16_t PEC = pec15(RDCFGA,sizeof(RDCFGA));
-            uint16_t n = PEC; // because shifting the sign bit invokes UB
+            int8_t RDCFGAhi = ((RDCFGA >> 8) & 0xff);
+            int8_t RDCFGAlo = ((RDCFGA >> 0) & 0xff);
+            uint8_t com[2] = {RDCFGAhi,RDCFGAlo};
+            uint16_t PEC = pec15(com,sizeof(com));
             int8_t PEChi = ((PEC >> 8) & 0xff);
             int8_t PEClo = ((PEC >> 0) & 0xff);
 
             SLAVE_CS_OUT &= ~(0x01);            //clears bitfield, pin is OUTPUT LOW
-            __delay_cycles(50000);              // wait until LTC6812 has woken up
-            SendUCA0Data(RDCFGA[0]);
-            SendUCA0Data(RDCFGA[1]);
+            __delay_cycles(20);              // wait until LTC6812 has woken up
+            SendUCA0Data(RDCFGAhi);
+            SendUCA0Data(RDCFGAlo);
             SendUCA0Data(PEChi);
             SendUCA0Data(PEClo);
+            SendUCA0Data(255);
+            SendUCA0Data(255);
+            SendUCA0Data(255);
+            SendUCA0Data(255);
+            SendUCA0Data(255);
+            SendUCA0Data(255);
             char *charin = &UCA0RXBUF;
+            while(UCA0STAT&UCBUSY);
             SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
 
             UARTprintchar(charin);

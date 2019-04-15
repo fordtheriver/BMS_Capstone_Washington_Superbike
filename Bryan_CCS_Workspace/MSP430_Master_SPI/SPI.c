@@ -1,9 +1,10 @@
 #include <SPI.h>
 #include <msp430.h>
 
-void SendUCA0Data(uint8_t val){
+int SendUCA0Data(uint8_t val){
     while (UCA0STAT&UCBUSY);              // Wait until TX buffer has been shifted out
     UCA0TXBUF = val;
+    return UCA0RXBUF;
 }
 
 void SPIprint(uint8_t *input){
@@ -53,25 +54,25 @@ void initGPIO()
 
     //Button to initiate transfer
     P1DIR &= ~BIT1;                           // Set P1.1 to inpput direction
-    P1REN |= BIT1;                            // Enable P1.1 internal resistance
-    P1OUT |= BIT1;                            // Set P1.1 as pull-Up resistance
-    P1IES |= BIT1;                            // P1.1 Hi/Lo edge
-    P1IFG &= ~BIT1;                           // P1.1 IFG cleared
-    P1IE |= BIT1;                             // P1.1 interrupt enabled
+    P1REN |= BIT1;                              // Enable P1.1 internal resistance
+    P1OUT |= BIT1;                              // Set P1.1 as pull-Up resistance
+    P1IES |= BIT1;                              // P1.1 Hi/Lo edge
+    P1IFG &= ~BIT1;                             // P1.1 IFG cleared
+    P1IE |= BIT1;                               // P1.1 interrupt enabled
 }
 
 void initSPI()
 {
     //Clock Polarity: The inactive state is high
     //MSB First, 8-bit, Master, 4-pin mode, Synchronous
-    UCA0CTL1 |= UCSWRST;                      // **Put state machine in reset**
-    UCA0CTL0 |= UCCKPL + UCMSB + UCMST + UCSYNC;
-    // Defaults to 8 bit, following edge capture
-    //UCCKPL - Inactive clock state high
-    //
-    //UCMODE_2 4-pin SPI with UCxSTE active low
-    UCA0CTL1 |= UCSSEL_2;                     // SMCLK
-    UCA0BR0 |= 0x20;                          // /2
+    UCA0CTL1 |= UCSWRST;                        // **Put state machine in reset**
+    UCA0CTL0 |= UCCKPL + UCMSB + UCMST + UCSYNC ;
+                                                // Defaults to 8 bit, following edge capture (UCCKPH |= BIT0)
+                                                // UCCKPL = 1 - Inactive clock state high
+                                                // UCMODE_2 4-pin SPI with UCxSTE active low
+    UCA0CTL1 |= UCSSEL_2;                       // Selects SMCLK as input clock
+    UCA0BR0 |= 0x20;                            // Clock begins at 16Mhz, then divided by 16 (see page 970, prescaler/divider).
+                                                // Then 0x20 divides the clock by 2 (see page 988), so that final clock frequency is 500 kHz
     UCA0BR1 = 0;                              //
     UCA0MCTL = 0;                             // No modulation must be cleared for SPI
     UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
