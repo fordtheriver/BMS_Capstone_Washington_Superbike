@@ -1,0 +1,302 @@
+[
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MY2CKRcw0wxI&path=Software/MSP430Ware/Development Tools/MSP-EXP430F5529LP/Peripheral Examples/Driver Library/Example Projects/TIMER_A&removeoffline=true",
+    "_id": "W0MY2CKRcw0wxI",
+    "_originalJsonFile": "msp430ware_3_80_07_00/.metadata/.tirex/content.tirex.json",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "devtools": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "devtools_category": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MY2CKRcw0wxI?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A&extname=.projectspec",
+    "linkType": "local",
+    "name": "timer_a_ex1_pwmSingle",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "projectSpec",
+    "semver": "0.0.0",
+    "tags": [
+      "API",
+      "Library",
+      "Peripherals",
+      "Software",
+      "driverlib"
+    ],
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "timer_a_ex1_pwmSingle",
+    "url": "/api/resources?devtool=MSP-EXP430F5529LP&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430F5529LP/Peripheral%20Examples/Driver%20Library/Example%20Projects/TIMER_A",
+    "importProject": "api/importProject/W0MY2CKRcw0wxI?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "packageOrder": 237,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0M2eO80SRRFfk&path=Software/MSP430Ware/Development Tools/MSP-EXP430F5529LP/Peripheral Examples/Driver Library/Example Projects/TIMER_A&removeoffline=true",
+    "_id": "W0M2eO80SRRFfk",
+    "_originalJsonFile": "msp430ware_3_80_07_00/.metadata/.tirex/content.tirex.json",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "devtools": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "devtools_category": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0M2eO80SRRFfk?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A&extname=.projectspec",
+    "linkType": "local",
+    "name": "timer_a_ex2_continousModeOperationWithCCR0Interrupt",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "projectSpec",
+    "semver": "0.0.0",
+    "tags": [
+      "API",
+      "Library",
+      "Peripherals",
+      "Software",
+      "driverlib"
+    ],
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "timer_a_ex2_continousModeOperationWithCCR0Interrupt",
+    "url": "/api/resources?devtool=MSP-EXP430F5529LP&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430F5529LP/Peripheral%20Examples/Driver%20Library/Example%20Projects/TIMER_A",
+    "importProject": "api/importProject/W0M2eO80SRRFfk?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "packageOrder": 237,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MQ3LWHSA2gIE&path=Software/MSP430Ware/Development Tools/MSP-EXP430F5529LP/Peripheral Examples/Driver Library/Example Projects/TIMER_A&removeoffline=true",
+    "_id": "W0MQ3LWHSA2gIE",
+    "_originalJsonFile": "msp430ware_3_80_07_00/.metadata/.tirex/content.tirex.json",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "devtools": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "devtools_category": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MQ3LWHSA2gIE?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A&extname=.projectspec",
+    "linkType": "local",
+    "name": "timer_a_ex3_continousModeOperationWithTAIEInterrupt",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "projectSpec",
+    "semver": "0.0.0",
+    "tags": [
+      "API",
+      "Library",
+      "Peripherals",
+      "Software",
+      "driverlib"
+    ],
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "timer_a_ex3_continousModeOperationWithTAIEInterrupt",
+    "url": "/api/resources?devtool=MSP-EXP430F5529LP&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430F5529LP/Peripheral%20Examples/Driver%20Library/Example%20Projects/TIMER_A",
+    "importProject": "api/importProject/W0MQ3LWHSA2gIE?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "packageOrder": 237,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0ManhlARn5kns&path=Software/MSP430Ware/Development Tools/MSP-EXP430F5529LP/Peripheral Examples/Driver Library/Example Projects/TIMER_A&removeoffline=true",
+    "_id": "W0ManhlARn5kns",
+    "_originalJsonFile": "msp430ware_3_80_07_00/.metadata/.tirex/content.tirex.json",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "devtools": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "devtools_category": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0ManhlARn5kns?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A&extname=.projectspec",
+    "linkType": "local",
+    "name": "timer_a_ex4_pwmMultipleUpDown",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "projectSpec",
+    "semver": "0.0.0",
+    "tags": [
+      "API",
+      "Library",
+      "Peripherals",
+      "Software",
+      "driverlib"
+    ],
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "timer_a_ex4_pwmMultipleUpDown",
+    "url": "/api/resources?devtool=MSP-EXP430F5529LP&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430F5529LP/Peripheral%20Examples/Driver%20Library/Example%20Projects/TIMER_A",
+    "importProject": "api/importProject/W0ManhlARn5kns?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "packageOrder": 237,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0McbyXQbKDpFc&path=Software/MSP430Ware/Development Tools/MSP-EXP430F5529LP/Peripheral Examples/Driver Library/Example Projects/TIMER_A&removeoffline=true",
+    "_id": "W0McbyXQbKDpFc",
+    "_originalJsonFile": "msp430ware_3_80_07_00/.metadata/.tirex/content.tirex.json",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "devtools": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "devtools_category": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0McbyXQbKDpFc?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A&extname=.projectspec",
+    "linkType": "local",
+    "name": "timer_a_ex5_pwmMultipleUp",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "projectSpec",
+    "semver": "0.0.0",
+    "tags": [
+      "API",
+      "Library",
+      "Peripherals",
+      "Software",
+      "driverlib"
+    ],
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "timer_a_ex5_pwmMultipleUp",
+    "url": "/api/resources?devtool=MSP-EXP430F5529LP&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430F5529LP/Peripheral%20Examples/Driver%20Library/Example%20Projects/TIMER_A",
+    "importProject": "api/importProject/W0McbyXQbKDpFc?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "packageOrder": 237,
+    "offline": "true"
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MNSrTa7hM1VM&path=Software/MSP430Ware/Development Tools/MSP-EXP430F5529LP/Peripheral Examples/Driver Library/Example Projects/TIMER_A&removeoffline=true",
+    "_id": "W0MNSrTa7hM1VM",
+    "_originalJsonFile": "msp430ware_3_80_07_00/.metadata/.tirex/content.tirex.json",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "devtools": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "devtools_category": [
+      "MSP-EXP430F5529LP",
+      "MSP-EXP430F5529"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MNSrTa7hM1VM?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A&extname=.projectspec",
+    "linkType": "local",
+    "name": "timer_a_ex6_upDownModeOperation",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "projectSpec",
+    "semver": "0.0.0",
+    "tags": [
+      "API",
+      "Library",
+      "Peripherals",
+      "Software",
+      "driverlib"
+    ],
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "timer_a_ex6_upDownModeOperation",
+    "url": "/api/resources?devtool=MSP-EXP430F5529LP&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.10.00.53::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.10.00.08::com.ti.SIMPLELINK_MSP432E4_SDK__3.10.00.11::com.ti.SIMPLELINK_CC32XX_SDK__3.10.00.04::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.02.21&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430F5529LP/Peripheral%20Examples/Driver%20Library/Example%20Projects/TIMER_A",
+    "importProject": "api/importProject/W0MNSrTa7hM1VM?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430F5529LP&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430F5529LP%2FPeripheral%20Examples%2FDriver%20Library%2FExample%20Projects%2FTIMER_A",
+    "packageOrder": 237,
+    "offline": "true"
+  }
+]

@@ -1,8 +1,10 @@
 #include <msp430.h> 
 #include "UART_to_USB.h"
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
-
+#include <LTC6812.h>
+#define qwe 0b0100000001000001
 
 char UARTbuf[10];
 char *UARTbufptr = UARTbuf;
@@ -13,11 +15,6 @@ int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
 
-    /*
-    P1OUT &= 0x00; // Shut down pins on P1
-    P1DIR &= 0x00; // Set P1 pins as outputf
-    P1DIR |= BIT0; // P1.0 pin set as output the rest are input
-     */
     P4OUT &= 0x00; // Shut down pins on P4
     P4DIR &= 0x00; // Set P1 pins as output
     P4DIR |= BIT7; // P1.0 pin set as output the rest are input
@@ -39,6 +36,14 @@ int main(void)
 
     UARTinit();
     UARTprintstring("Program Begin: \n\r");
+    char PEChi = ((qwe >> 8) & 0xff);
+    char PEClo = ((qwe >> 0) & 0xff);
+
+    UARTprintchar(&PEChi);
+    UARTprintstring("\n\r");
+    UARTprintchar(&PEClo);
+    UARTprintstring("\n\r");
+
     while(1){
         switch(state){
         case 0:

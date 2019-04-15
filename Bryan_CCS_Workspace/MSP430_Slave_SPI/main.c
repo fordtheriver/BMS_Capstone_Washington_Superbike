@@ -47,7 +47,7 @@ int main(void) {
 __interrupt void USCI_A0_ISR(void){
 
   UARTprintstring("Slave RX ISR Routine Initiated\r\n");
-  char *spibuf = &UCA0RXBUF;
+  volatile unsigned char *spibuf = &UCA0RXBUF;
   UCA0TXBUF = UCA0RXBUF;
   UARTprintchar(spibuf);
   UARTprintstring("\r\n");

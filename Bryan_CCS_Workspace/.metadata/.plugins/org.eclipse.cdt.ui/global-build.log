@@ -17228,3 +17228,913 @@ Finished building target: "MSP430_Master_SPI.out"
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project MSP430_Master_SPI ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSP430_Master_SPI.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSP430_Master_SPI ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSP430_Master_SPI.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 43: warning #169-D: argument of type "int" is incompatible with parameter of type "char *"
+"../main.c", line 43: warning #154-D: conversion of nonzero integer to pointer
+"../main.c", line 82: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 83: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 43: error #160: expression must be an lvalue or a function designator
+"../main.c", line 82: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 83: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 43: error #20: identifier "uint16_t" is undefined
+"../main.c", line 44: error #20: identifier "int8_t" is undefined
+"../main.c", line 44: error #20: identifier "PEC" is undefined
+"../main.c", line 45: error #20: identifier "int8_t" is undefined
+"../main.c", line 86: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 87: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+4 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 4: fatal error #1965: cannot open source file "stdint"
+1 catastrophic error detected in the compilation of "../main.c".
+Compilation terminated.
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 45: error #20: identifier "PEC" is undefined
+"../main.c", line 48: warning #169-D: argument of type "int8_t *" is incompatible with parameter of type "char *"
+"../main.c", line 44: warning #179-D: variable "n" was declared but never referenced
+"../main.c", line 44: remark #1535-D: (ULP 8.1) variable "n" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 87: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 88: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 48: warning #169-D: argument of type "int8_t *" is incompatible with parameter of type "char *"
+"../main.c", line 44: warning #179-D: variable "n" was declared but never referenced
+"../main.c", line 46: warning #179-D: variable "PEClo" was declared but never referenced
+"../main.c", line 44: remark #1535-D: (ULP 8.1) variable "n" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 46: remark #1535-D: (ULP 8.1) variable "PEClo" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 87: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 88: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 48: warning #169-D: argument of type "int8_t *" is incompatible with parameter of type "char *"
+"../main.c", line 50: warning #169-D: argument of type "int8_t *" is incompatible with parameter of type "char *"
+"../main.c", line 91: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 91: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'UART_Attempt.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'UART_Attempt.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 91: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 45: error #138: expression must be a modifiable lvalue
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 93: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 45: error #41: expected an identifier
+"../main.c", line 45: remark #1535-D: (ULP 8.1) variable "<error>" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 93: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 45: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 23 of "C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h")
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 93: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+8 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 8: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 23 of "C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h")
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 93: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+8 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 8: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 23 of "C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h")
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 93: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+8 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 93: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+8 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 93: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+8 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #18: expected a ")"
+"../main.c", line 47: error #29: expected an expression
+"../main.c", line 48: error #29: expected an expression
+"../main.c", line 48: error #18: expected a ")"
+"../main.c", line 48: error #18: expected a ")"
+"../main.c", line 48: error #29: expected an expression
+"../main.c", line 93: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 94: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+8 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 45: error #29: expected an expression
+"../main.c", line 45: error #18: expected a ")"
+"../main.c", line 45: error #18: expected a ")"
+"../main.c", line 45: error #29: expected an expression
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #18: expected a ")"
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 91: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+8 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 91: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSP430_Master_SPI ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSP430_Master_SPI.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'UART_Attempt.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 45: error #29: expected an expression
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 91: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+2 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 45: error #29: expected an expression
+"../main.c", line 46: error #29: expected an expression
+"../main.c", line 91: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 92: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+2 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h", line 23: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 20)
+"../main.c", line 43: error #29: expected an expression
+"../main.c", line 44: error #29: expected an expression
+"../main.c", line 89: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 90: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+2 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h", line 23: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 20)
+"../main.c", line 89: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 90: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h", line 17: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 14)
+"../main.c", line 89: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 90: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h", line 17: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 14)
+"../main.c", line 85: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 86: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h", line 17: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 14)
+"../main.c", line 39: error #29: expected an expression
+"../main.c", line 40: error #29: expected an expression
+"../main.c", line 85: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 86: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+2 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h", line 17: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 14)
+"../main.c", line 39: error #29: expected an expression
+"../main.c", line 40: error #29: expected an expression
+"../main.c", line 85: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 86: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+2 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h", line 17: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 14)
+"../main.c", line 39: error #29: expected an expression
+"../main.c", line 40: error #29: expected an expression
+"../main.c", line 85: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 86: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+2 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt/LTC6812.h", line 17: warning #48-D: incompatible redefinition of macro "RDAUXD" (declared at line 14)
+"../main.c", line 85: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 86: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'UART_Attempt.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 85: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 86: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project UART_Attempt ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/UART_Attempt" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 85: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTreadchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 86: remark #1538-D: (ULP 10.1) ISR USCI_A1_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "UART_Attempt.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"UART_Attempt.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_Attempt_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "UART_Attempt.out" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "UART_Attempt.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSP430_Slave_SPI ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/MSP430_Slave_SPI" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 50: warning #145-D: a value of type "volatile unsigned char *" cannot be used to initialize an entity of type "volatile char *"
+"../main.c", line 52: warning #169-D: argument of type "volatile char *" is incompatible with parameter of type "char *"
+"../main.c", line 49: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 52: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 53: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSP430_Slave_SPI.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"MSP430_Slave_SPI.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSP430_Slave_SPI_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "MSP430_Slave_SPI.out" "./SPI.obj" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSP430_Slave_SPI.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSP430_Slave_SPI ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/MSP430_Slave_SPI" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 52: warning #169-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "char *"
+"../main.c", line 49: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 52: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 53: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSP430_Slave_SPI.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"MSP430_Slave_SPI.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSP430_Slave_SPI_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "MSP430_Slave_SPI.out" "./SPI.obj" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSP430_Slave_SPI.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSP430_Slave_SPI ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/MSP430_Slave_SPI" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 52: warning #770-D: conversion from pointer to smaller integer
+"../main.c", line 52: warning #169-D: argument of type "char" is incompatible with parameter of type "char *"
+"../main.c", line 49: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 52: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 53: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSP430_Slave_SPI.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"MSP430_Slave_SPI.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSP430_Slave_SPI_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "MSP430_Slave_SPI.out" "./SPI.obj" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSP430_Slave_SPI.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSP430_Slave_SPI ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/MSP430_Slave_SPI" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 52: warning #770-D: conversion from pointer to smaller integer
+"../main.c", line 52: error #29: expected an expression
+"../main.c", line 49: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 52: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 53: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSP430_Slave_SPI ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace/MSP430_Slave_SPI" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 52: warning #169-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "char *"
+"../main.c", line 49: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 52: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintchar. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 53: remark #1538-D: (ULP 10.1) ISR USCI_A0_ISR calls function UARTprintstring. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSP430_Slave_SPI.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"MSP430_Slave_SPI.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSP430_Slave_SPI_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "MSP430_Slave_SPI.out" "./SPI.obj" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSP430_Slave_SPI.out"
+ 
+
+**** Build Finished ****

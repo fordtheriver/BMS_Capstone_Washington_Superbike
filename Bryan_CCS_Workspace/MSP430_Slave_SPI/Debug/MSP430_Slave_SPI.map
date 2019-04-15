@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v18.12.1                    
 ******************************************************************************
->> Linked Sun Apr 14 16:50:52 2019
+>> Linked Mon Apr 15 08:45:38 2019
 
 OUTPUT FILE NAME:   <MSP430_Slave_SPI.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00004424
