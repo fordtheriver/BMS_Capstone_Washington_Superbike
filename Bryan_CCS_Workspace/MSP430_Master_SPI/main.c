@@ -44,34 +44,16 @@ int main(void) {
     initSPI();
     UARTinit();
     init_PEC15_Table();
-
     while(1){
 
-            int8_t RDCFGAhi = ((RDCFGA >> 8) & 0xff);
-            int8_t RDCFGAlo = ((RDCFGA >> 0) & 0xff);
-            uint8_t com[2] = {RDCFGAhi,RDCFGAlo};
-            uint16_t PEC = pec15(com,sizeof(com));
-            int8_t PEChi = ((PEC >> 8) & 0xff);
-            int8_t PEClo = ((PEC >> 0) & 0xff);
+        uint8_t data[6] = {0b11111010,0x00,0x00,0x00,0x00,0b00010000};
+        uint8_t rd[6]= {0xff,0xff,0xff,0xff,0xff,0xff};
 
-            SLAVE_CS_OUT &= ~(0x01);            //clears bitfield, pin is OUTPUT LOW
-            __delay_cycles(20);              // wait until LTC6812 has woken up
-            SendUCA0Data(RDCFGAhi);
-            SendUCA0Data(RDCFGAlo);
-            SendUCA0Data(PEChi);
-            SendUCA0Data(PEClo);
-            SendUCA0Data(255);
-            SendUCA0Data(255);
-            SendUCA0Data(255);
-            SendUCA0Data(255);
-            SendUCA0Data(255);
-            SendUCA0Data(255);
-            char *charin = &UCA0RXBUF;
-            while(UCA0STAT&UCBUSY);
-            SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+        uint16_t cmd = 0x0000;
+        //SendUCA0cmd(&cmd,data);
+        cmd = RDCFGA;
+        SendUCA0cmd(&cmd,rd);
 
-            UARTprintchar(charin);
-            UARTprintstring("\n\r");
-       }
+    }
 }
 

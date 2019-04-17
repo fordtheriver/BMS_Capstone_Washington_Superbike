@@ -14,6 +14,43 @@ void SPIprint(uint8_t *input){
     }
 }
 
+void SendUCA0cmd(uint16_t *cmdptr,uint8_t *data){
+
+    //Create int array for command
+    uint16_t cmd = *cmdptr;
+    uint8_t cmd0 = ((cmd >> 8) & 0x0000ff);
+    uint8_t cmd1 = ((cmd >> 0) & 0x0000ff);
+    uint8_t cmdarr[2] = {cmd0,cmd1};
+
+    //Calculate PEC for command
+    uint16_t cmdPEC = pec15(cmdarr,sizeof(cmdarr));
+    uint8_t cmdPEC0 = ((cmdPEC >> 8) & 0xff);
+    uint8_t cmdPEC1 = ((cmdPEC >> 0) & 0xff);
+
+    //Calculate PEc for data
+    uint16_t dataPEC = pec15(data,sizeof(data));
+    uint8_t dataPEC0 = ((dataPEC >> 8) & 0xff);
+    uint8_t dataPEC1 = ((dataPEC >> 0) & 0xff);
+
+    //Send command
+    SLAVE_CS_OUT &= ~(0x01);            //clears bitfield, pin is OUTPUT LOW
+    SendUCA0Data(cmd0);
+    SendUCA0Data(cmd1);
+    SendUCA0Data(cmdPEC0);
+    SendUCA0Data(cmdPEC1);
+
+    SendUCA0Data(data[0]);
+    SendUCA0Data(data[1]);
+    SendUCA0Data(data[2]);
+    SendUCA0Data(data[3]);
+    SendUCA0Data(data[4]);
+    SendUCA0Data(data[5]);
+    SendUCA0Data(dataPEC0);
+    SendUCA0Data(dataPEC1);
+    while(UCA0STAT&UCBUSY);
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+}
+
 void initClockTo16MHz(){
     UCSCTL3 |= SELREF_2;                      // Set DCO FLL reference = REFO
     UCSCTL4 |= SELA_2;                        // Set ACLK = REFO
@@ -21,9 +58,9 @@ void initClockTo16MHz(){
     UCSCTL0 = 0x0000;                         // Set lowest possible DCOx, MODx
     UCSCTL1 = DCORSEL_5;                      // Select DCO range 16MHz operation
     UCSCTL2 = FLLD_0 + 487;                   // Set DCO Multiplier for 16MHz
-                                              // (N + 1) * FLLRef = Fdco
-                                              // (487 + 1) * 32768 = 16MHz
-                                                  // Set FLL Div = fDCOCLK
+    // (N + 1) * FLLRef = Fdco
+    // (487 + 1) * 32768 = 16MHz
+    // Set FLL Div = fDCOCLK
     __bic_SR_register(SCG0);                  // Enable the FLL control loop
 
     // Worst-case settling time for the DCO when the DCO range bits have been
@@ -67,12 +104,12 @@ void initSPI()
     //MSB First, 8-bit, Master, 4-pin mode, Synchronous
     UCA0CTL1 |= UCSWRST;                        // **Put state machine in reset**
     UCA0CTL0 |= UCCKPL + UCMSB + UCMST + UCSYNC ;
-                                                // Defaults to 8 bit, following edge capture (UCCKPH |= BIT0)
-                                                // UCCKPL = 1 - Inactive clock state high
-                                                // UCMODE_2 4-pin SPI with UCxSTE active low
+    // Defaults to 8 bit, following edge capture (UCCKPH |= BIT0)
+    // UCCKPL = 1 - Inactive clock state high
+    // UCMODE_2 4-pin SPI with UCxSTE active low
     UCA0CTL1 |= UCSSEL_2;                       // Selects SMCLK as input clock
     UCA0BR0 |= 0x20;                            // Clock begins at 16Mhz, then divided by 16 (see page 970, prescaler/divider).
-                                                // Then 0x20 divides the clock by 2 (see page 988), so that final clock frequency is 500 kHz
+    // Then 0x20 divides the clock by 2 (see page 988), so that final clock frequency is 500 kHz
     UCA0BR1 = 0;                              //
     UCA0MCTL = 0;                             // No modulation must be cleared for SPI
     UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
