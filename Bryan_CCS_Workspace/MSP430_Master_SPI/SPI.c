@@ -7,6 +7,12 @@ int SendUCA0Data(uint8_t val){
     return UCA0RXBUF;
 }
 
+/*
+int SendUCA0DataWord(uint8_t *dataword){
+    count = 0;
+    while(*dataword!= '\0')
+}*/
+
 void SPIprint(uint8_t *input){
     while(*input != '\0'){
         SendUCA0Data(*input);
@@ -14,7 +20,9 @@ void SPIprint(uint8_t *input){
     }
 }
 
-void SendUCA0cmd(uint16_t *cmdptr,uint8_t *data){
+int SendUCA0cmd(uint16_t *cmdptr,uint8_t *data){
+
+    int recByte[12];
 
     //Create int array for command
     uint16_t cmd = *cmdptr;
@@ -34,21 +42,24 @@ void SendUCA0cmd(uint16_t *cmdptr,uint8_t *data){
 
     //Send command
     SLAVE_CS_OUT &= ~(0x01);            //clears bitfield, pin is OUTPUT LOW
-    SendUCA0Data(cmd0);
-    SendUCA0Data(cmd1);
-    SendUCA0Data(cmdPEC0);
-    SendUCA0Data(cmdPEC1);
+    recByte[0] = SendUCA0Data(cmd0);
+    recByte[1] = SendUCA0Data(cmd1);
+    recByte[2] = SendUCA0Data(cmdPEC0);
+    recByte[3] = SendUCA0Data(cmdPEC1);
 
-    SendUCA0Data(data[0]);
-    SendUCA0Data(data[1]);
-    SendUCA0Data(data[2]);
-    SendUCA0Data(data[3]);
-    SendUCA0Data(data[4]);
-    SendUCA0Data(data[5]);
-    SendUCA0Data(dataPEC0);
-    SendUCA0Data(dataPEC1);
+    __delay_cycles(1000);
+
+    recByte[4] = SendUCA0Data(data[0]);
+    recByte[5] = SendUCA0Data(data[1]);
+    recByte[6] = SendUCA0Data(data[2]);
+    recByte[7] = SendUCA0Data(data[3]);
+    recByte[8] = SendUCA0Data(data[4]);
+    recByte[9] = SendUCA0Data(data[5]);
+    recByte[10] = SendUCA0Data(dataPEC0);
+    recByte[11] = SendUCA0Data(dataPEC1);
     while(UCA0STAT&UCBUSY);
     SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    return recByte;
 }
 
 void initClockTo16MHz(){

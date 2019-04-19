@@ -48,9 +48,11 @@ int main(void) {
 
         uint8_t data[6] = {0b11111010,0x00,0x00,0x00,0x00,0b00010000};
         uint8_t rd[6]= {0xff,0xff,0xff,0xff,0xff,0xff};
+        __delay_cycles(2000);
+        int recWord;
 
-        uint16_t cmd = 0x0000;
-        //SendUCA0cmd(&cmd,data);
+        uint16_t cmd =  WRCFGA;
+        recWord = SendUCA0cmd(&cmd,data);
         cmd = RDCFGA;
         SendUCA0cmd(&cmd,rd);
 
