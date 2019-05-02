@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="__delay_cycles" key="selection"/>
+		<item value="SendUCA0byte" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="SendUCA0Data"/>
+			<item value="pec15"/>
 			<item value="__delay_cycles"/>
 			<item value="gie"/>
 			<item value="__no_operation"/>
@@ -21,10 +23,9 @@
 			<item value="initGPIO"/>
 			<item value="initClo"/>
 			<item value="main"/>
-			<item value="initSPi"/>
-			<item value="initS"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SendUCA0byte"/>
 			<item value="A1_B"/>
 		</list>
 	</section>

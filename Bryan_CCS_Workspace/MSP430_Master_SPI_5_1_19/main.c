@@ -29,11 +29,18 @@
 
 #include <msp430.h> 
 #include <stdint.h>
+#include <stdio.h>
 #include <stdbool.h>
 #include "UART_to_USB.h"
 #include <SPI.h>
 #include <PEC.h>
 #include <LTC6812.h>
+
+struct Data Data;
+uint16_t Cell1;
+double Cell1_V;
+char charCellx_V[12];
+
 
 int main(void) {
     WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
@@ -44,9 +51,38 @@ int main(void) {
     initSPI();
     UARTinit();
     init_PEC15_Table();
+
+    //Enter Main Loop
+    while(1){
+
+        uint8_t data[6] = {0b00000110,0x00,0x00,0x00,0x00,0x00};
+        __delay_cycles(700);
+
+        //Initiate ADC Conversion
+        uint16_t wrcmd = ADCV;
+        SendUCA0cmd(&wrcmd);
+        WriteUCA0(data);
+
+        //Read Measured Cell Voltages
+        struct CellVoltages CellV = ReadCellVoltages();
+
+        //Check to see that all PEC's match
+        if(CellV.CellVx_x[0].pass == 0 ||CellV.CellVx_x[1].pass == 0 || CellV.CellVx_x[2].pass == 0 || CellV.CellVx_x[3].pass == 0 ){
+            UARTprintstring("Error: Calculated data PEC does not match received data PEC\n\r");
+        }
+
+        //Print out measured values
+        uint8_t i;
+        for(i = 0; i<12; i++){
+            sprintf(charCellx_V,"Cell %d (V):%f\r\n",i+1,CellV.CellV1_12[i]);
+            UARTprintstring(charCellx_V);
+        }
+    }
+
+
+    /*
     while(1){
         uint8_t data[6] = {0b00000010,0x00,0x00,0x00,0x00,0x00};
-        uint8_t rd[6]= {0xff,0xff,0xff,0xff,0xff,0xff};
         __delay_cycles(700);
 
         //WRITE GROUP A
@@ -65,20 +101,20 @@ int main(void) {
         uint8_t dataPEC0 = ((dataPEC >> 8) & 0xff);
         uint8_t dataPEC1 = ((dataPEC >> 0) & 0xff);
 
-        SendUCA0Data(wrcmd0);
-        SendUCA0Data(wrcmd1);
-        SendUCA0Data(wrcmdPEC0);
-        SendUCA0Data(wrcmdPEC1);
+        SendUCA0byte(wrcmd0);
+        SendUCA0byte(wrcmd1);
+        SendUCA0byte(wrcmdPEC0);
+        SendUCA0byte(wrcmdPEC1);
 
         __delay_cycles(100);
-        SendUCA0Data(data[0]);
-        SendUCA0Data(data[1]);
-        SendUCA0Data(data[2]);
-        SendUCA0Data(data[3]);
-        SendUCA0Data(data[4]);
-        SendUCA0Data(data[5]);
-        SendUCA0Data(dataPEC0);
-        SendUCA0Data(dataPEC1);
+        SendUCA0byte(data[0]);
+        SendUCA0byte(data[1]);
+        SendUCA0byte(data[2]);
+        SendUCA0byte(data[3]);
+        SendUCA0byte(data[4]);
+        SendUCA0byte(data[5]);
+        SendUCA0byte(dataPEC0);
+        SendUCA0byte(dataPEC1);
         while(UCA0STAT&UCBUSY);
         SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
 
@@ -96,22 +132,24 @@ int main(void) {
         uint8_t cmdPEC0 = ((cmdPEC >> 8) & 0xff);
         uint8_t cmdPEC1 = ((cmdPEC >> 0) & 0xff);
 
-        SendUCA0Data(cmd0);
-        SendUCA0Data(cmd1);
-        SendUCA0Data(cmdPEC0);
-        SendUCA0Data(cmdPEC1);
+        SendUCA0byte(cmd0);
+        SendUCA0byte(cmd1);
+        SendUCA0byte(cmdPEC0);
+        SendUCA0byte(cmdPEC1);
 
         __delay_cycles(700);
-        SendUCA0Data(rd[0]);
-        SendUCA0Data(rd[1]);
-        SendUCA0Data(rd[2]);
-        SendUCA0Data(rd[3]);
-        SendUCA0Data(rd[4]);
-        SendUCA0Data(rd[5]);
-        SendUCA0Data(0xff);
-        SendUCA0Data(255);
+        SendUCA0byte(0xff);
+        Data.data[0] = SendUCA0byte(0xff);
+        Data.data[1] =SendUCA0byte(0xff);
+        Data.data[2] =SendUCA0byte(0xff);
+        Data.data[3] =SendUCA0byte(0xff);
+        Data.data[4] =SendUCA0byte(0xff);
+        Data.data[5] =SendUCA0byte(0xff);
+        Data.pec[0] = SendUCA0byte(0xff);
+        Data.pec[1] = SendUCA0byte(0xff);
         while(UCA0STAT&UCBUSY);
         SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
-}
+    }
+     */
 }
 
