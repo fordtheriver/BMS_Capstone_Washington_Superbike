@@ -30,6 +30,8 @@
 #define ADOW     0b0000001000101000
 #define CVST     0b0000001000000111
 
+#define HIGHBYTE 0xff
+
 
 
 #endif /* LTC6812_H_ */

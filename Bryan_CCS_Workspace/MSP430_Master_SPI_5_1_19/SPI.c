@@ -1,10 +1,17 @@
 #include <SPI.h>
 #include <msp430.h>
 
+void LTC6811ADCV(void){
+    uint16_t wrcmd = ADCV;
+    SendUCA0cmd(&wrcmd);
+    uint8_t sixbytes[6] = {HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE};
+    WriteUCA0(sixbytes);
+}
+
 //Send a 16 bit command
 void SendUCA0cmd(uint16_t *cmdptr){
 
-    //Create int array for command
+    //Create 8bit int array for command
     uint16_t cmd = *cmdptr;
     uint8_t cmd0 = ((cmd >> 8) & 0x0000ff);
     uint8_t cmd1 = ((cmd >> 0) & 0x0000ff);
@@ -31,42 +38,6 @@ uint8_t SendUCA0byte(uint8_t val){
     return UCA0RXBUF;
 }
 
-//Read Incoming Data
-struct Data ReadUCA0(void){
-
-    struct Data Data;
-    SendUCA0byte(0xff);
-
-    //Read Incoming 6 Byte Data Word
-    uint8_t i;
-    for(i = 0; i<3; i++){
-        Data.data8[2*i]   = SendUCA0byte(0xff);
-        Data.data8[2*i+1] = SendUCA0byte(0xff);
-        Data.data16[i] = ((Data.data8[2*i+1] << 8) & 0xff00);
-        Data.data16[i] = Data.data16[i] + Data.data8[2*i];
-    }
-
-    //Receive Incoming PEC
-    Data.pec[0] = SendUCA0byte(0xff);
-    Data.pec[1] = SendUCA0byte(0xff);
-
-    //Calculate PEC for Incoming Data
-    uint16_t DataInPEC = pec15(Data.data8,sizeof(Data.data8));
-    Data.DataInPEC[0] = ((DataInPEC >> 8) & 0xff);
-    Data.DataInPEC[1] = ((DataInPEC >> 0) & 0xff);
-
-    //Check to see if PEC's match
-    if(Data.DataInPEC == Data.pec){
-        Data.pass[0] = 1;
-    }else{
-        Data.pass[0] = 0;
-    }
-
-    while(UCA0STAT&UCBUSY);
-    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
-    return Data;
-}
-
 struct CellVoltages ReadCellVoltages(void){
 
     struct CellVoltages CellV;
@@ -89,16 +60,68 @@ struct CellVoltages ReadCellVoltages(void){
     int i,j;
     for(i = 0; i<4; i++){
         for(j = 0; j<3; j++){
-            CellV.CellV1_12[3*i + j] = (CellV.CellVx_x[i].data16[j])/10000.0;
+            CellV.CellV_float[3*i + j] = (CellV.CellVx_x[i].data16[j])/10000.0;
+            CellV.CellV_16bit[3*i + j] = (CellV.CellVx_x[i].data16[j]);
         }
     }
     return CellV;
 }
 
-//Write data to 6811
-void WriteUCA0(uint8_t *data){
 
+//Read Incoming Data
+DataStruct ReadUCA0(void){
+
+    DataStruct Data;
+    SendUCA0byte(0xff);
+
+    //Read Incoming 6 Byte Data Word
+    uint8_t i;
+    for(i = 0; i<3; i++){
+        Data.data8[2*i]   = SendUCA0byte(0xff);
+        Data.data8[2*i+1] = SendUCA0byte(0xff);
+        Data.data16[i] = ((Data.data8[2*i+1] << 8) & 0xff00);
+        Data.data16[i] = Data.data16[i] + Data.data8[2*i];
+    }
+
+    //Receive Incoming PEC
+    Data.PEC[0] = SendUCA0byte(0xff);
+    Data.PEC[1] = SendUCA0byte(0xff);
+
+    //Calculate PEC for Incoming Data
+    uint16_t DataInPEC = pec15(Data.data8,sizeof(Data.data8));
+    Data.DataInPEC[0] = ((DataInPEC >> 8) & 0xff);
+    Data.DataInPEC[1] = ((DataInPEC >> 0) & 0xff);
+
+    //Check to see if PEC's match
+    if(Data.DataInPEC == Data.PEC){
+        Data.pass[0] = true;
+    }else{
+        Data.pass[0] = false;
+    }
+
+    while(UCA0STAT&UCBUSY);
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    return Data;
+}
+
+void BalanceCells(struct OverVoltage OverV){
+
+    uint16_t cmd = WRCFGA;
+    SendUCA0cmd(&cmd);
+    uint8_t data[6] = {0b00000110,0x00,0x00,0x00,0x00,0x00};
+    data[4] = ((OverV.status16[0]) >> 0 & 0xff);
+    data[5] = ((OverV.status16[0]) >> 8 & 0xff);
+    WriteUCA0(data);
+}
+
+//Write data to 6811
+void WriteUCA0(uint8_t data*){
+    uint8_t datatest[6] = {*(data), *(data+1),*(data+2),*(data+3),*(data+4),*(data+5)};
+
+    //uint8_t datatest2[6] = data;
+    //uint8_t data[6] = *dataptr;
     //Calculate PEC for Data
+    //uint8_t datanew[6] = {0b00000110,0x00,0x00,0x00,63,0x00};
     uint16_t dataPEC = pec15(data,sizeof(data));
     uint8_t dataPEC0 = ((dataPEC >> 8) & 0xff);
     uint8_t dataPEC1 = ((dataPEC >> 0) & 0xff);
@@ -116,10 +139,38 @@ void WriteUCA0(uint8_t *data){
     while(UCA0STAT&UCBUSY);
     __delay_cycles(1000);
     SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
-
-
 }
 
+
+struct OverVoltage CheckDiff(uint16_t minV, uint16_t delta,struct CellVoltages *CellV, uint8_t numcell){
+    struct OverVoltage OverV;
+    uint8_t i = 0;
+    OverV.status16[0] = 0;
+
+    while(i < 12){
+        OverV.status[i] = 0;
+        OverV.Vdiff[i] = 5.0;
+        i++;
+    }
+
+    uint16_t min = CellV->CellV_16bit[0];
+    for(i = 1; i<numcell; i++){
+        if(CellV->CellV_16bit[i] < min){
+            min = CellV->CellV_16bit[i];
+        }
+    }
+    if(min > minV){
+        for(i = 0; i<numcell; i++){
+            if(CellV->CellV_16bit[i]-delta > min){
+                OverV.status[i] = 1;
+                OverV.status16[0] = OverV.status16[0] + (BIT0 << i);
+                OverV.Vdiff[i] = (double)(CellV->CellV_16bit[i] - min)/10000.0;
+            }
+        }
+    }
+    OverV.min = min/10000.0;
+    return OverV;
+}
 
 void initClockTo16MHz(){
     UCSCTL3 |= SELREF_2;                      // Set DCO FLL reference = REFO
@@ -188,3 +239,4 @@ void initSPI()
     SLAVE_CS_DIR |= 0x01;               //Sets this pin as an output pin
     SLAVE_CS_OUT |= 0x01;               //
 }
+DataStruct* makeDataStruct()
