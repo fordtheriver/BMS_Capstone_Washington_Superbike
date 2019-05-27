@@ -13,7 +13,7 @@ SPI.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/sys/_
 SPI.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h
 SPI.obj: C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU/LTC6811.h
 SPI.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430.h
-SPI.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/cc430f5123.h
+SPI.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430f5529.h
 SPI.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/in430.h
 SPI.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/intrinsics.h
 SPI.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/intrinsics_legacy_undefs.h
@@ -31,7 +31,7 @@ C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/sys/_stdint.h:
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h: 
 C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU/LTC6811.h: 
 C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430.h: 
-C:/ti/ccs900/ccs/ccs_base/msp430/include/cc430f5123.h: 
+C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430f5529.h: 
 C:/ti/ccs900/ccs/ccs_base/msp430/include/in430.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/intrinsics.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/intrinsics_legacy_undefs.h: 

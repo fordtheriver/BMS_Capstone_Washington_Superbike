@@ -8,7 +8,7 @@ SHELL = cmd.exe
 %.obj: ../%.c $(GEN_OPTS) | $(GEN_FILES)
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: MSP430 Compiler'
-	"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__CC430F5123__ -g --printf_support=full --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
+	"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=full --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="$(basename $(<F)).d_raw" $(GEN_OPTS__FLAG) "$<"
 	@echo 'Finished building: "$<"'
 	@echo ' '
 

@@ -1,1 +1,1 @@
-"./LTC6811.obj" "./PEC.obj" "./SPI.obj" "./UART_to_USB.obj" "./main.obj" "../lnk_cc430f5123.cmd" -llibmath.a -llibc.a 
+"./LTC6811.obj" "./PEC.obj" "./SPI.obj" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd" -llibmath.a -llibc.a 

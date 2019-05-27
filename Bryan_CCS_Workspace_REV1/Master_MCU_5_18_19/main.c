@@ -25,13 +25,15 @@
 #include <PEC.h>
 #include <LTC6811.h>
 
-struct Data Data;
+
 uint16_t Cell1;
 double Cell1_V;
 char charCellx_V[12];
 char overVstr[30];
-struct CellVoltages CellV;
-struct OverVoltage OverV;
+CellData DATA;
+CellVoltages CELL_V;
+OverVoltage OVER_V;
+
 
 int main(void) {
     WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
@@ -43,45 +45,43 @@ int main(void) {
     UARTinit();
     init_PEC15_Table();
 
+    static const uint16_t minV = 34000;
+    static const uint16_t delta = 300;
+    static const uint8_t numcell = 12;
+
     //Enter Main Loop
     while(1){
-
-        __delay_cycles(7000);
 
         //Initiate ADC Conversion
         LTC6811ADCV();
 
         //Read Measured Cell Voltages
-        CellV = ReadCellVoltages();
+        CELL_V = ReadCellVoltages();
+        BalanceCells(&OVER_V);
 
+        //Check Difference in Cell Voltages
+        OVER_V = CheckDiff(minV,delta,&CELL_V,numcell);
 
         //Check to see that all PEC's match
-        if(CellV.CellVx_x[0].pass == false ||CellV.CellVx_x[1].pass == false || CellV.CellVx_x[2].pass == false || CellV.CellVx_x[3].pass == false ){
-            UARTprintstring("Error: Calculated data PEC does not match received data PEC\n\r");
+        if(CELL_V.CellVx_x[0].pass == false || CELL_V.CellVx_x[1].pass == false || CELL_V.CellVx_x[2].pass == false || CELL_V.CellVx_x[3].pass == false ){
+                   UARTprintstring("Error: Calculated data PEC does not match received data PEC\n\r");
         }
-
-        static const uint16_t minV = 34000;
-        static const uint16_t delta = 300;
-        static const uint8_t numcell = 12;
-
-        OverV = CheckDiff(minV,delta,&CellV,numcell);
-        BalanceCells(&OverV);
 
         //Print out measured values
         uint8_t i;
         for(i = 0; i<12; i++){
-            sprintf(charCellx_V,"Cell %d (V):%.3f\r\n",i+1,CellV.CellV_float[i]);
+            sprintf(charCellx_V,"Cell %d (V):%.3f\r\n",i+1,CELL_V.CellV_float[i]);
             UARTprintstring(charCellx_V);
         }
         for(i = 0; i<12; i++){
-            if(OverV.status[i] == 1){
-                sprintf(overVstr,"Cell %d is %.3f V over voltage\r\n",i+1,OverV.Vdiff[i]);
+            if(OVER_V.status[i] == 1){
+                sprintf(overVstr,"Cell %d is %.3f V over voltage\r\n",i+1,OVER_V.Vdiff[i]);
                 UARTprintstring(overVstr);
             }
         }
 
         //__delay_cycles(10000000);
-        __delay_cycles(500000);
+        // __delay_cycles(500000);
         //__delay_cycles(50000);
 
         //OverV.status16[0] = 0;

@@ -12,7 +12,7 @@ LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/m
 LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/sys/_stdint.h
 LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h
 LTC6811.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430.h
-LTC6811.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/cc430f5123.h
+LTC6811.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430f5529.h
 LTC6811.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/in430.h
 LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/intrinsics.h
 LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/intrinsics_legacy_undefs.h
@@ -32,7 +32,7 @@ C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/machine/_stdin
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/sys/_stdint.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h: 
 C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430.h: 
-C:/ti/ccs900/ccs/ccs_base/msp430/include/cc430f5123.h: 
+C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430f5529.h: 
 C:/ti/ccs900/ccs/ccs_base/msp430/include/in430.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/intrinsics.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/intrinsics_legacy_undefs.h: 
