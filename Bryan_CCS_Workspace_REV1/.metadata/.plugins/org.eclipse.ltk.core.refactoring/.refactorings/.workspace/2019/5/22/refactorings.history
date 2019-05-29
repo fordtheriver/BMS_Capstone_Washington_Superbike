@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Master_MCU_5_28_19&apos; to &apos;Master_MCU_OLD_5_28_19&apos;" description="Rename resource &apos;Master_MCU_5_28_19&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Master_MCU_5_28_19" name="Master_MCU_OLD_5_28_19" stamp="1559074758428" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Master_MCU_5_18_19&apos; to &apos;Master_MCU_5_28_19&apos;" description="Rename resource &apos;Master_MCU_5_18_19&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Master_MCU_5_18_19" name="Master_MCU_5_28_19" stamp="1559074775928" updateReferences="true"/>
+</session>

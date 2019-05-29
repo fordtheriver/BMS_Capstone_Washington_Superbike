@@ -1,0 +1,88 @@
+
+**** Build of configuration Debug for project Master_MCU_5_28_19 ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 2 all -O 
+ 
+Building file: "../SPI.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=full --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="SPI.d_raw"  "../SPI.c"
+"../SPI.c", line 7: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../SPI.c", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+Finished building: "../SPI.c"
+ 
+Building file: "../LTC6811.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=full --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="LTC6811.d_raw"  "../LTC6811.c"
+Finished building: "../LTC6811.c"
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=full --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../LTC6811.c", line 26: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 27: remark #2553-D: (ULP 14.1) Array index (involving "a") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 33: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 34: remark #2553-D: (ULP 14.1) Array index (involving "a") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 40: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 41: remark #2553-D: (ULP 14.1) Array index (involving "a") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 47: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 48: remark #2553-D: (ULP 14.1) Array index (involving "a") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 55: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 56: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 57: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 58: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 58: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../LTC6811.c", line 58: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 58: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 59: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 59: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 59: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 88: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 96: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 97: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 98: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 99: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 99: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../LTC6811.c", line 99: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 100: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 101: remark #1545-D: (ULP 14.1) Array index of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 108: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../LTC6811.c", line 119: remark #2553-D: (ULP 14.1) Array index (involving "a") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 120: remark #2553-D: (ULP 14.1) Array index (involving "a") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 179: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../LTC6811.c", line 156: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 157: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 158: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 159: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 160: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 200: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../LTC6811.c", line 194: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../LTC6811.c", line 195: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../LTC6811.c", line 201: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../LTC6811.c", line 58 (col. 51): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../LTC6811.c", line 82 (col. 24): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../LTC6811.c", line 99 (col. 41): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../LTC6811.c", line 108 (col. 15): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 58: warning #62-D: integer operation result is out of range
+"../main.c", line 58: warning #69-D: integer conversion resulted in a change of sign
+"../main.c", line 54: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 69: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 70: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 73: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 75: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 54: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 69: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 73: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 70 (col. 20): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 75 (col. 24): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../main.c"
+ 
+Building target: "Master_MCU_5_28_19.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=full --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"Master_MCU_5_28_19.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs900/ccs/ccs_base/msp430/include" -i"C:/ti/ccs900/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Master_MCU_5_28_19_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "Master_MCU_5_28_19.out" "./LTC6811.obj" "./PEC.obj" "./SPI.obj" "./UART_to_USB.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Master_MCU_5_28_19.out"
+ 
+
+**** Build Finished ****
