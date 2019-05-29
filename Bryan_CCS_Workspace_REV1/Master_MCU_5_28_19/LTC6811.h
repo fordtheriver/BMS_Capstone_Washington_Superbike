@@ -28,10 +28,14 @@
 #define RDPSB    0b0000000000011110     //Read  PWM/S Control Register Group B
 #define STSCTRL  0b0000000000011001     //Start S Control Pulsing and Poll Status
 #define CLRSCTRL 0b0000000000011000     //Clear S Control Register Group
-//                     109876543210
+
 #define ADCV     0b0000001101100000
 #define ADOW     0b0000001000101000
 #define CVST     0b0000001000000111
+
+#define NUMSLAVES 2                     //This defines the amount of 6811 borads daisy chained in the BMS. This firmware handles 1 - n daisy chained 6811
+#define MINBALANCEV 3400              //This is the minimum cell voltage where the BMS will begin balancing, in millivolts.
+#define MINBALANCEDELTA 6             //This is the minimum difference between a cell and the minimum cell required to balance the cell, in millivolts
 
 #define HIGHBYTE 0xff
 
@@ -43,26 +47,26 @@ typedef struct CellData {
     uint16_t data16[3];
     uint8_t PEC[2];
     uint8_t DataInPEC[2];
-    bool pass[1]; //condition for PEC continuity
+    bool pass[1];                   //condition for PEC continuity
 }CellData;
 
 typedef struct CellVoltages{
-    CellData CellVx_x[4];
-    double CellV_float[12];
-    uint16_t CellV_16bit[12];
+    CellData CellVx_x[4*NUMSLAVES];
+    double CellV_float[12*NUMSLAVES];
+    uint16_t CellV_16bit[12*NUMSLAVES];
 }CellVoltages;
 
 typedef struct OverVoltage{
-    uint8_t status[12];
-    uint16_t status16[1];
-    double Vdiff[12];
-    double min;
+    uint8_t status[12*NUMSLAVES];   //Status array for all the cells. For example, cell 5 status is stored in index 5 of the array
+    uint16_t status16[NUMSLAVES];   //These two bytes will be written to the 6811 Configuration Register A to turn on balancing
+    double Vdiff[12*NUMSLAVES];     //This array holds the voltage difference between the corresponding cell and the minimum cell voltage.
+    double min;                     //The minimum cell voltage
 }OverVoltage;
 
 //High Level Functions
 CellVoltages ReadCellVoltages(void);
 void LTC6811ADCV(void);
-OverVoltage CheckDiff(uint16_t minV, uint16_t delta,CellVoltages *CellV, uint8_t numcell);
+OverVoltage CheckDiff(uint16_t minV, uint16_t delta,CellVoltages *CellV);
 void BalanceCells(OverVoltage *OverV);
 
 //Low Level Functions

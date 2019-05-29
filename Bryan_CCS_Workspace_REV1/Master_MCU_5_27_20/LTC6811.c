@@ -5,9 +5,10 @@
 
 CellVoltages ReadCellVoltages(void){
 
-    struct CellVoltages CellV;
+    CellVoltages CellV;
 
     //Read Cell Voltage from the 4 Cell Voltage Register Groups
+    //Each Cell Voltage Register Groups contains voltages for 3 cells
     uint16_t cmd = RDCVA;
     SendLTC6811Cmd(&cmd);
     CellV.CellVx_x[0] = ReadLTC6811Data();
@@ -32,11 +33,30 @@ CellVoltages ReadCellVoltages(void){
     return CellV;
 }
 
+SensorValues ReadSensorValues(void){
+    SensorValues SensorValues;
+
+    //Read ADC conversion readings from the 2 Voltage Register Groups that have the GPIO data
+    uint16_t cmd = RDAUXA;
+    SendLTC6811Cmd(&cmd);
+    SensorValues.SensorValues_Data[0] = ReadLTC6811Data();
+    cmd = RDAUXB;
+    SendLTC6811Cmd(&cmd);
+    SensorValues.SensorValues_Data[1] = ReadLTC6811Data();
+
+
+}
+
 void LTC6811ADCV(void){
     uint16_t wrcmd = ADCV;
     SendLTC6811Cmd(&wrcmd);
-    uint8_t sixbytes[6] = {HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE};
-    WriteLTC6811Data(sixbytes,6);
+    SLAVE_CS_OUT |= 0x01;
+}
+
+void LTC6811ADAX(void){
+    uint16_t wrcmd = ADAX;
+    SendLTC6811Cmd(&wrcmd);
+    SLAVE_CS_OUT |= 0x01;
 }
 
 OverVoltage CheckDiff(uint16_t minV, uint16_t delta,struct CellVoltages *CellV, uint8_t numcell){
@@ -102,7 +122,7 @@ void SendLTC6811Cmd(uint16_t *cmdptr){
 
     //Send command
     SLAVE_CS_OUT &= ~(0x01);            //clears bitfield, pin is OUTPUT LOW
-    __delay_cycles(20);
+    //__delay_cycles(20);
     SendUCA0byte(cmd0);
     SendUCA0byte(cmd1);
     SendUCA0byte(cmdPEC0);
@@ -164,7 +184,7 @@ void WriteLTC6811Data(uint8_t *data, uint8_t data_length){
     SendUCA0byte(dataPEC1);
 
     while(UCA0STAT&UCBUSY);
-    __delay_cycles(1000);
+   // __delay_cycles(10);
     SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
 }
 

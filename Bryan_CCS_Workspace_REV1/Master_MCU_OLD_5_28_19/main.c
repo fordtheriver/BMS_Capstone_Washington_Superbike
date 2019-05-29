@@ -25,16 +25,6 @@
 #include <PEC.h>
 #include <LTC6811.h>
 
-
-uint16_t Cell1;
-double Cell1_V;
-char charCellx_V[12];
-char overVstr[30];
-CellData DATA;
-CellVoltages CELL_V;
-OverVoltage OVER_V;
-
-
 int main(void) {
     WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
 
@@ -47,20 +37,25 @@ int main(void) {
 
     static const uint16_t minV = 34000;
     static const uint16_t delta = 300;
-    static const uint8_t numcell = 12;
+
+    CellData DATA;
+    CellVoltages CELL_V;
+    OverVoltage OVER_V;
+
+    char UARTstr[30];
 
     //Enter Main Loop
     while(1){
 
-        //Initiate ADC Conversion
-        LTC6811ADCV();
-
-        //Read Measured Cell Voltages
-        CELL_V = ReadCellVoltages();
-        BalanceCells(&OVER_V);
-
-        //Check Difference in Cell Voltages
-        OVER_V = CheckDiff(minV,delta,&CELL_V,numcell);
+        LTC6811ADCV();                                  //Initiate ADC Conversion
+        SLAVE_CS_OUT &= ~(0x01);
+        __delay_cycles(48000);                          //Wait for LTC6811 to perform ADC
+        SLAVE_CS_OUT |= 0x01;
+        CELL_V = ReadCellVoltages();                    //Read Measured Cell Voltages
+        SLAVE_CS_OUT &= ~(0x01);                        //Pull LTC6811 Chip Select LOW to prevent LTC6820 from going to sleep
+        OVER_V = CheckDiff(minV,delta,&CELL_V); //Check Difference in Cell Voltages
+        SLAVE_CS_OUT |= 0x01;                           //Pull LTC6811 Chip Select HIGH to prevent LTC6820 from going to sleep
+        BalanceCells(&OVER_V);                          //Balance cells calculated to be over voltage
 
         //Check to see that all PEC's match
         if(CELL_V.CellVx_x[0].pass == false || CELL_V.CellVx_x[1].pass == false || CELL_V.CellVx_x[2].pass == false || CELL_V.CellVx_x[3].pass == false ){
@@ -70,24 +65,15 @@ int main(void) {
         //Print out measured values
         uint8_t i;
         for(i = 0; i<12; i++){
-            sprintf(charCellx_V,"Cell %d (V):%.3f\r\n",i+1,CELL_V.CellV_float[i]);
-            UARTprintstring(charCellx_V);
+            sprintf(UARTstr,"Cell %d (V):%.3f\r\n",i+1,CELL_V.CellV_float[i]);
+            UARTprintstring(UARTstr);
         }
         for(i = 0; i<12; i++){
             if(OVER_V.status[i] == 1){
-                sprintf(overVstr,"Cell %d is %.3f V over voltage\r\n",i+1,OVER_V.Vdiff[i]);
-                UARTprintstring(overVstr);
+                sprintf(UARTstr,"Cell %d is %.3f V over voltage\r\n",i+1,OVER_V.Vdiff[i]);
+                UARTprintstring(UARTstr);
             }
         }
-
-        //__delay_cycles(10000000);
-        // __delay_cycles(500000);
-        //__delay_cycles(50000);
-
-        //OverV.status16[0] = 0;
-
-        //BalanceCells(&OverV);
-
     }
 }
 
