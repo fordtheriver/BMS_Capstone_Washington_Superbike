@@ -1,8 +1,0 @@
-
-**** Build of configuration Debug for project lab_04a_clock_solution_msp430f5529 ****
-
-"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
- 
-gmake[1]: 'lab_04a_clock_solution_msp430f5529.out' is up to date.
-
-**** Build Finished ****

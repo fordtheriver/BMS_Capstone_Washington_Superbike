@@ -40,7 +40,7 @@ int main(void) {
     //Initializations
     initClockTo16MHz();
     initGPIO();
-    initSPI();
+    initSPI();                                          //Initializes the
     UARTinit();
     init_PEC15_Table();
 
