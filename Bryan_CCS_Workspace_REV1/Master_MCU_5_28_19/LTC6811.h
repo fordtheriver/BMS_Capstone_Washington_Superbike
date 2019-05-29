@@ -29,29 +29,29 @@
 #define STSCTRL  0b0000000000011001     //Start S Control Pulsing and Poll Status
 #define CLRSCTRL 0b0000000000011000     //Clear S Control Register Group
 
-#define ADCV     0b0000001101100000
+#define ADCV     0b0000001101100000     //Initiate ADC conversion for the LTC6811
 #define ADOW     0b0000001000101000
 #define CVST     0b0000001000000111
 
 #define NUMSLAVES 2                     //This defines the amount of 6811 borads daisy chained in the BMS. This firmware handles 1 - n daisy chained 6811
-#define MINBALANCEV 3400              //This is the minimum cell voltage where the BMS will begin balancing, in millivolts.
-#define MINBALANCEDELTA 6             //This is the minimum difference between a cell and the minimum cell required to balance the cell, in millivolts
+#define MINBALANCEV 3400                //This is the minimum cell voltage where the BMS will begin balancing, in millivolts.
+#define MINBALANCEDELTA 6               //This is the minimum difference between a cell and the minimum cell required to balance the cell, in millivolts
 
 #define HIGHBYTE 0xff
 
 #define SLAVE_CS_OUT    P2OUT
 #define SLAVE_CS_DIR    P2DIR
 
-typedef struct CellData {
+typedef struct BSMData {
     uint8_t data8[6];
     uint16_t data16[3];
     uint8_t PEC[2];
     uint8_t DataInPEC[2];
     bool pass[1];                   //condition for PEC continuity
-}CellData;
+}BSMData;
 
 typedef struct CellVoltages{
-    CellData CellVx_x[4*NUMSLAVES];
+    BSMData CellVx_x[4*NUMSLAVES];
     double CellV_float[12*NUMSLAVES];
     uint16_t CellV_16bit[12*NUMSLAVES];
 }CellVoltages;
@@ -71,7 +71,7 @@ void BalanceCells(OverVoltage *OverV);
 
 //Low Level Functions
 void SendLTC6811Cmd(uint16_t *cmdptr);
-CellData ReadLTC6811Data(void);
+BSMData ReadLTC6811Data(void);
 void WriteLTC6811Data(uint8_t *data, uint8_t data_length);
 
 

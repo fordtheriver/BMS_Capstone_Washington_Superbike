@@ -29,7 +29,7 @@
 
 
 
-CellData DATA;                      //Global variable so that it can be accessed from any stack by the debugger
+BSMData DATA;                      //Global variable so that it can be accessed from any stack by the debugger
 CellVoltages CELL_V;
 OverVoltage OVER_V;
 

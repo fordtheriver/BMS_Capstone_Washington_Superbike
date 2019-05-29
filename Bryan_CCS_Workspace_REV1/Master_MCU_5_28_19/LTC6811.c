@@ -147,9 +147,9 @@ void SendLTC6811Cmd(uint16_t *cmdptr){
 }
 
 //Read Incoming Data
-CellData ReadLTC6811Data(void){
+BSMData ReadLTC6811Data(void){
 
-    CellData Data;
+    BSMData Data;
 
     //Read Incoming 6 Byte Data Word
     uint8_t i;
