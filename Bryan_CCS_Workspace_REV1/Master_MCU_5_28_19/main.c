@@ -49,7 +49,7 @@ int main(void) {
     //Enter Main Loop
     while(1){
 
-        LTC6811ADCV();                                  //Initiate ADC Conversion
+        LTC6811ADCVAX();                                  //Initiate ADC Conversion
         SLAVE_CS_OUT &= ~(0x01);
         __delay_cycles(48000);                          //Wait for LTC6811 to perform ADC
         SLAVE_CS_OUT |= 0x01;

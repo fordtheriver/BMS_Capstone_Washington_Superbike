@@ -63,8 +63,84 @@ CellVoltages ReadCellVoltages(void){
     return CellV;
 }
 
+CellVoltages ReadCellVoltages_2GPIO(void){
+
+    CellVoltages CellV;
+    uint8_t a;
+    //Read Cell Voltage from the 4 Cell Voltage Register Groups
+
+    //for loop clocks in data for every daisy chain component after each command is sent.
+    // It adds the data struct for each register in incremental order. For example, two daisy chainged would be:
+    // Slave 1 REG A (1-3)
+    // Slave 1 REG B (4-6)
+    // Slave 1 REG C (7-9)
+    // Slave 1 REG D (10-12)
+    // Slave 2 REG A (13-15)
+    // Slave 2 REG B (16-18)
+    // Slave 2 REG C (19-21)
+    // Slave 2 REG D (22-24)
+
+    uint16_t cmd = RDCVA;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        CellV.CellVx_x[4*a] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDCVB;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        CellV.CellVx_x[4*a + 1] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDCVC;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        CellV.CellVx_x[4*a + 2] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDCVD;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        CellV.CellVx_x[4*a + 3] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDAUXA;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        CellV.GPIO[a] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+
+    //Cycle through each structure and compute cell voltage in V as a double
+    //Saves cell voltages as doubles and float in incrementing order. (Cell 14 would be in the 14th index of the float and double array)
+    int i,j;
+    for(a = 0; a < NUMSLAVES; a++){
+        for(i = 0; i<4; i++){
+            for(j = 0; j<3; j++){
+                CellV.CellV_float[12*a + 3*i + j] = (CellV.CellVx_x[4*a + i].data16[j])/10000.0;
+                CellV.CellV_16bit[12*a + 3*i + j] = (CellV.CellVx_x[4*a + i].data16[j]);
+            }
+        }
+    }
+    return CellV;
+}
+
+
+
 void LTC6811ADCV(void){
     uint16_t wrcmd = ADCV;
+    SendLTC6811Cmd(&wrcmd);
+    uint8_t sixbytes[6] = {HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE};
+    WriteLTC6811Data(sixbytes,6);
+}
+
+void LTC6811ADCVAX(void){
+    uint16_t wrcmd = ADCVAX;
     SendLTC6811Cmd(&wrcmd);
     uint8_t sixbytes[6] = {HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE};
     WriteLTC6811Data(sixbytes,6);
@@ -82,6 +158,9 @@ OverVoltage CheckDiff(uint16_t minV, uint16_t delta,struct CellVoltages *CellV){
         OverV.Vdiff[i] = 5.0;
         i++;
     }
+    OverV.status16[0] = 0;
+    OverV.status16[1] = 0;
+
 
     //Determine the minimum cell voltage value of the cell
     uint16_t min = CellV->CellV_16bit[0];
@@ -118,6 +197,7 @@ void BalanceCells(OverVoltage *OverV){
     for(a = NUMSLAVES; a > 0; a--){                                 //When writing to Daisy chain, write to top of stack first, then decrement count to the primary stack.
         configA[4] = ((OverV->status16[a-1]) >> 0 & 0xff);
         configA[5] = ((OverV->status16[a-1]) >> 8 & 0xff);
+        configA[5] &= ~0b11110000;
         WriteLTC6811Data(configA,6);                                //passing pointer to
     }
     SLAVE_CS_OUT |= 0x01;                                           // sets bitfield to 1, pin is OUTPUT HIGH. This tells the 6820 that communication is over
