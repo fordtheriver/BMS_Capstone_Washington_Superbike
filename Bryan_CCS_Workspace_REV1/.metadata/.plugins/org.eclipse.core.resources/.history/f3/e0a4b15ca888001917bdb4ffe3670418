@@ -1,0 +1,7 @@
+//Declare function prototypes
+
+void UARTPrintData(CellVoltages *CellV, OverVoltage *OverV);
+void initUART();
+void UARTprintstring(char *string);
+void UARTprintchar(char *c);
+char UARTreadchar();

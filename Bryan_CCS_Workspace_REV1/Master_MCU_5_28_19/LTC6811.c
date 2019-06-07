@@ -1,135 +1,94 @@
 #include <LTC6811.h>
+#include <UART_to_USB.h>
 #include <msp430.h>
 #include <PEC.h>
 #include <SPI.h>
 
+
 CellVoltages ReadCellVoltages(void){
 
     CellVoltages CellV;
-    uint8_t a;
+    BMSDaisyData DaisyData;
+    uint8_t a,i,j;
     //Read Cell Voltage from the 4 Cell Voltage Register Groups
-
-    //for loop clocks in data for every daisy chain component after each command is sent.
-    // It adds the data struct for each register in incremental order. For example, two daisy chainged would be:
-    // Slave 1 REG A (1-3)
-    // Slave 1 REG B (4-6)
-    // Slave 1 REG C (7-9)
-    // Slave 1 REG D (10-12)
-    // Slave 2 REG A (13-15)
-    // Slave 2 REG B (16-18)
-    // Slave 2 REG C (19-21)
-    // Slave 2 REG D (22-24)
 
     uint16_t cmd = RDCVA;
     SendLTC6811Cmd(&cmd);
     SendUCA0byte(0xff);
     for(a = 0; a<NUMSLAVES;a++){
-        CellV.CellVx_x[4*a] = ReadLTC6811Data();
+        DaisyData.CellV_Struct[4*a] = ReadLTC6811Data();
     }
     SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
     cmd = RDCVB;
     SendLTC6811Cmd(&cmd);
     SendUCA0byte(0xff);
     for(a = 0; a<NUMSLAVES;a++){
-        CellV.CellVx_x[4*a + 1] = ReadLTC6811Data();
+        DaisyData.CellV_Struct[4*a + 1] = ReadLTC6811Data();
     }
     SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
     cmd = RDCVC;
     SendLTC6811Cmd(&cmd);
     SendUCA0byte(0xff);
     for(a = 0; a<NUMSLAVES;a++){
-        CellV.CellVx_x[4*a + 2] = ReadLTC6811Data();
+        DaisyData.CellV_Struct[4*a + 2] = ReadLTC6811Data();
     }
-    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    SLAVE_CS_OUT |= 0x01;                           // sets bitfield to 1, pin is OUTPUT HIGH
     cmd = RDCVD;
     SendLTC6811Cmd(&cmd);
     SendUCA0byte(0xff);
     for(a = 0; a<NUMSLAVES;a++){
-        CellV.CellVx_x[4*a + 3] = ReadLTC6811Data();
+        DaisyData.CellV_Struct[4*a + 3] = ReadLTC6811Data();
     }
-    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    SLAVE_CS_OUT |= 0x01;                           // sets bitfield to 1, pin is OUTPUT HIGH
+
 
     //Cycle through each structure and compute cell voltage in V as a double
     //Saves cell voltages as doubles and float in incrementing order. (Cell 14 would be in the 14th index of the float and double array)
-    int i,j;
-    for(a = 0; a < NUMSLAVES; a++){
-        for(i = 0; i<4; i++){
-            for(j = 0; j<3; j++){
-                CellV.CellV_float[12*a + 3*i + j] = (CellV.CellVx_x[4*a + i].data16[j])/10000.0;
-                CellV.CellV_16bit[12*a + 3*i + j] = (CellV.CellVx_x[4*a + i].data16[j]);
+    for(a = 0; a < NUMSLAVES; a++){     //Loop through each slave
+        for(i = 0; i<4; i++){           //Loop through each register containing cell voltages
+            for(j = 0; j<3; j++){       //Loop through each 16 bit word representing a cell voltage
+                CellV.CellV_float[12*a + 3*i + j] = (DaisyData.CellV_Struct[4*a + i].data16[j])/10000.0;
+                CellV.CellV_16bit[12*a + 3*i + j] = (DaisyData.CellV_Struct[4*a + i].data16[j]);
             }
         }
     }
     return CellV;
 }
 
-CellVoltages ReadCellVoltages_2GPIO(void){
 
-    CellVoltages CellV;
-    uint8_t a;
-    //Read Cell Voltage from the 4 Cell Voltage Register Groups
+GPIOVoltages ReadGPIOVoltages(void){
 
-    //for loop clocks in data for every daisy chain component after each command is sent.
-    // It adds the data struct for each register in incremental order. For example, two daisy chainged would be:
-    // Slave 1 REG A (1-3)
-    // Slave 1 REG B (4-6)
-    // Slave 1 REG C (7-9)
-    // Slave 1 REG D (10-12)
-    // Slave 2 REG A (13-15)
-    // Slave 2 REG B (16-18)
-    // Slave 2 REG C (19-21)
-    // Slave 2 REG D (22-24)
+    GPIOVoltages GPIOV;
+    BMSDaisyData DaisyData;
+    uint8_t a,i,j;
 
-    uint16_t cmd = RDCVA;
+    uint16_t cmd = RDAUXA;                                   //Read Auxillary Register B
     SendLTC6811Cmd(&cmd);
     SendUCA0byte(0xff);
     for(a = 0; a<NUMSLAVES;a++){
-        CellV.CellVx_x[4*a] = ReadLTC6811Data();
+        DaisyData.GPIOV_Struct[2*a + 1] = ReadLTC6811Data();    //Save GPIO1-3 Data
     }
-    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
-    cmd = RDCVB;
+    SLAVE_CS_OUT |= 0x01;                           // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDAUXB;                                   //Read Auxillary Register B
     SendLTC6811Cmd(&cmd);
     SendUCA0byte(0xff);
     for(a = 0; a<NUMSLAVES;a++){
-        CellV.CellVx_x[4*a + 1] = ReadLTC6811Data();
+        DaisyData.GPIOV_Struct[2*a + 2] = ReadLTC6811Data();    //Save GPIO4-5 & VREF data
     }
-    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
-    cmd = RDCVC;
-    SendLTC6811Cmd(&cmd);
-    SendUCA0byte(0xff);
-    for(a = 0; a<NUMSLAVES;a++){
-        CellV.CellVx_x[4*a + 2] = ReadLTC6811Data();
-    }
-    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
-    cmd = RDCVD;
-    SendLTC6811Cmd(&cmd);
-    SendUCA0byte(0xff);
-    for(a = 0; a<NUMSLAVES;a++){
-        CellV.CellVx_x[4*a + 3] = ReadLTC6811Data();
-    }
-    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
-    cmd = RDAUXA;
-    SendLTC6811Cmd(&cmd);
-    SendUCA0byte(0xff);
-    for(a = 0; a<NUMSLAVES;a++){
-        CellV.GPIO[a] = ReadLTC6811Data();
-    }
-    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    SLAVE_CS_OUT |= 0x01;                           // sets bitfield to 1, pin is OUTPUT HIGH
 
-    //Cycle through each structure and compute cell voltage in V as a double
-    //Saves cell voltages as doubles and float in incrementing order. (Cell 14 would be in the 14th index of the float and double array)
-    int i,j;
+    //Cycle through each GPIO struct and computer the GPIO V as a double and float
+    //Save the GPIO Voltages as doubles in incrementing order
     for(a = 0; a < NUMSLAVES; a++){
-        for(i = 0; i<4; i++){
+        for(i = 0; i<2; i++ ){
             for(j = 0; j<3; j++){
-                CellV.CellV_float[12*a + 3*i + j] = (CellV.CellVx_x[4*a + i].data16[j])/10000.0;
-                CellV.CellV_16bit[12*a + 3*i + j] = (CellV.CellVx_x[4*a + i].data16[j]);
+                GPIOV.GPIOV_float[6*a + 3*i + j] = DaisyData.GPIOV_Struct[2*a + i].data16[j]/10000.0;
+                GPIOV.GPIOV_16bit[6*a + 3*i + j] = DaisyData.GPIOV_Struct[2*a + i].data16[j];
             }
         }
     }
-    return CellV;
+    return GPIOV;
 }
-
 
 
 void LTC6811ADCV(void){
@@ -139,8 +98,8 @@ void LTC6811ADCV(void){
     WriteLTC6811Data(sixbytes,6);
 }
 
-void LTC6811ADCVAX(void){
-    uint16_t wrcmd = ADCVAX;
+void LTC6811ADAX(void){
+    uint16_t wrcmd = ADAX;
     SendLTC6811Cmd(&wrcmd);
     uint8_t sixbytes[6] = {HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE};
     WriteLTC6811Data(sixbytes,6);
@@ -227,9 +186,9 @@ void SendLTC6811Cmd(uint16_t *cmdptr){
 }
 
 //Read Incoming Data
-BSMData ReadLTC6811Data(void){
+BMSData ReadLTC6811Data(void){
 
-    BSMData Data;
+    BMSData Data;
 
     //Read Incoming 6 Byte Data Word
     uint8_t i;
@@ -250,10 +209,11 @@ BSMData ReadLTC6811Data(void){
     Data.DataInPEC[1] = ((DataInPEC >> 0) & 0xff);
 
     //Check to see if PEC's match
-    if(Data.DataInPEC == Data.PEC){
+    if(Data.DataInPEC[0] == Data.PEC[0] && Data.DataInPEC[1] == Data.PEC[1]){
         Data.pass[0] = true;
     }else{
         Data.pass[0] = false;
+        //UARTPrintString("Error: Calculated data PEC does not match received data PEC\n\r");
     }
 
     while(UCA0STAT&UCBUSY);

@@ -11,6 +11,8 @@ LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/m
 LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/machine/_stdint.h
 LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/sys/_stdint.h
 LTC6811.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h
+LTC6811.obj: C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/UART_to_USB.h
+LTC6811.obj: C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/LTC6811.h
 LTC6811.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430.h
 LTC6811.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430f5529.h
 LTC6811.obj: C:/ti/ccs900/ccs/ccs_base/msp430/include/in430.h
@@ -31,6 +33,8 @@ C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/machine/_types
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/machine/_stdint.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/sys/_stdint.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h: 
+C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/UART_to_USB.h: 
+C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/LTC6811.h: 
 C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430.h: 
 C:/ti/ccs900/ccs/ccs_base/msp430/include/msp430f5529.h: 
 C:/ti/ccs900/ccs/ccs_base/msp430/include/in430.h: 

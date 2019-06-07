@@ -29,8 +29,9 @@
 
 
 
-BSMData DATA;                      //Global variable so that it can be accessed from any stack by the debugger
+BMSData DATA;                      //Global variable so that it can be accessed from any stack by the debugger
 CellVoltages CELL_V;
+GPIOVoltages GPIO_V;
 OverVoltage OVER_V;
 
 
@@ -41,41 +42,25 @@ int main(void) {
     initClockTo16MHz();
     initGPIO();
     initSPI();                                          //Initializes the
-    UARTinit();
+    initUART();
     init_PEC15_Table();
-
-    char UARTstr[30];
 
     //Enter Main Loop
     while(1){
 
-        LTC6811ADCVAX();                                  //Initiate ADC Conversion
+        LTC6811ADCV();
+        LTC6811ADAX();                                  //Initiate ADC Conversion
         SLAVE_CS_OUT &= ~(0x01);
         __delay_cycles(48000);                          //Wait for LTC6811 to perform ADC
         SLAVE_CS_OUT |= 0x01;
         CELL_V = ReadCellVoltages();                    //Read Measured Cell Voltages
+        GPIO_V = ReadGPIOVoltages();                    //Read Measured Cell Voltages
         SLAVE_CS_OUT &= ~(0x01);                        //Pull LTC6811 Chip Select LOW to prevent LTC6820 from going to sleep
         OVER_V = CheckDiff(MINBALANCEV*10,MINBALANCEDELTA*10,&CELL_V); //Check Difference in Cell Voltages
         SLAVE_CS_OUT |= 0x01;                           //Pull LTC6811 Chip Select HIGH to prevent LTC6820 from going to sleep
         BalanceCells(&OVER_V);                          //Balance cells calculated to be over voltage
 
-        //Check to see that all PEC's match
-        if(CELL_V.CellVx_x[0].pass == false || CELL_V.CellVx_x[1].pass == false || CELL_V.CellVx_x[2].pass == false || CELL_V.CellVx_x[3].pass == false ){
-                   UARTprintstring("Error: Calculated data PEC does not match received data PEC\n\r");
-        }
-
-        //Print out measured values
-        uint8_t i;
-        for(i = 0; i<12*NUMSLAVES; i++){
-            sprintf(UARTstr,"Cell %d (V):%.3f\r\n",i+1,CELL_V.CellV_float[i]);
-            UARTprintstring(UARTstr);
-        }
-        for(i = 0; i<12*NUMSLAVES; i++){
-            if(OVER_V.status[i] == 1){
-                sprintf(UARTstr,"Cell %d is %.3f V over voltage\r\n",i+1,OVER_V.Vdiff[i]);
-                UARTprintstring(UARTstr);
-            }
-        }
+        UARTPrintData(&CELL_V,&GPIO_V,&OVER_V);
+        __delay_cycles(32000000);
     }
 }
-

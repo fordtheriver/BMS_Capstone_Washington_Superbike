@@ -31,6 +31,7 @@
 
 #define ADCV     0b0000001101100000     //Initiate ADC conversion for the LTC6811
 #define ADCVAX   0b0000010101101111
+#define ADAX     0b0000010101100000
 #define ADOW     0b0000001000101000
 #define CVST     0b0000001000000111
 
@@ -43,22 +44,28 @@
 #define SLAVE_CS_OUT    P2OUT
 #define SLAVE_CS_DIR    P2DIR
 
-typedef struct BSMData {            // data struct for one register group on the LTC6811
+typedef struct BMSData{            // data struct for one register group on the LTC6811
     uint8_t data8[6];
     uint16_t data16[3];
     uint8_t PEC[2];
     uint8_t DataInPEC[2];
     bool pass[1];                   //condition for PEC continuity
-}BSMData;
+}BMSData;
+
+typedef struct BMSDaisyData{
+    BMSData CellV_Struct[4*NUMSLAVES];
+    BMSData GPIOV_Struct[2*NUMSLAVES];
+}BMSDaisyData;
 
 typedef struct CellVoltages{
-    BSMData CellVx_x[4*NUMSLAVES];
-    BSMData GPIO[NUMSLAVES];
     double CellV_float[12*NUMSLAVES];
     uint16_t CellV_16bit[12*NUMSLAVES];
 }CellVoltages;
 
-
+typedef struct GPIOVoltages{
+    double GPIOV_float[6*NUMSLAVES];
+    uint16_t GPIOV_16bit[6*NUMSLAVES];
+}GPIOVoltages;
 
 typedef struct OverVoltage{
     uint8_t status[12*NUMSLAVES];   //Status array for all the cells. For example, cell 5 status is stored in index 5 of the array
@@ -69,15 +76,15 @@ typedef struct OverVoltage{
 
 //High Level Functions
 CellVoltages ReadCellVoltages(void);
-CellVoltages ReadCellVoltages_2GPIO(void);
+GPIOVoltages ReadGPIOVoltages(void);
 void LTC6811ADCV(void);
-void LTC6811ADCVAX(void);
+void LTC6811ADAX(void);
 OverVoltage CheckDiff(uint16_t minV, uint16_t delta,CellVoltages *CellV);
 void BalanceCells(OverVoltage *OverV);
 
 //Low Level Functions
 void SendLTC6811Cmd(uint16_t *cmdptr);
-BSMData ReadLTC6811Data(void);
+BMSData ReadLTC6811Data(void);
 void WriteLTC6811Data(uint8_t *data, uint8_t data_length);
 
 

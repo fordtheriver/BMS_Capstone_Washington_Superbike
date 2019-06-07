@@ -20,6 +20,7 @@ main.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/link
 main.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdarg.h
 main.obj: C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h
 main.obj: ../UART_to_USB.h
+main.obj: C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/LTC6811.h
 main.obj: C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/SPI.h
 main.obj: C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/LTC6811.h
 main.obj: C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/PEC.h
@@ -45,6 +46,7 @@ C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/linkage.h:
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdarg.h: 
 C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include/stdbool.h: 
 ../UART_to_USB.h: 
+C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/LTC6811.h: 
 C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/SPI.h: 
 C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/LTC6811.h: 
 C:/Users/bryan/Desktop/BMS//\ Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_28_19/PEC.h: 

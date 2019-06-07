@@ -2,18 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="BMSDaisyData" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="CellVoltages"/>
+			<item value="bsm"/>
+			<item value="BSM"/>
 			<item value="CellData"/>
 			<item value="charCellx"/>
 			<item value="senduc"/>
 			<item value="balan"/>
 		</list>
 		<list key="replacehistory">
+			<item value="BMSDaisyData"/>
+			<item value="BMS"/>
 			<item value="BMSData"/>
 			<item value="BSMData"/>
 			<item value="UARTstr"/>
