@@ -1,0 +1,246 @@
+#include <LTC6811.h>
+#include <UART_to_USB.h>
+#include <msp430.h>
+#include <PEC.h>
+#include <SPI.h>
+
+
+CellVoltages ReadCellVoltages(void){
+
+    CellVoltages CellV;
+    BMSDaisyData DaisyData;
+    uint8_t a,i,j;
+    //Read Cell Voltage from the 4 Cell Voltage Register Groups
+
+    uint16_t cmd = RDCVA;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        DaisyData.CellV_Struct[4*a] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDCVB;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        DaisyData.CellV_Struct[4*a + 1] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDCVC;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        DaisyData.CellV_Struct[4*a + 2] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;                           // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDCVD;
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        DaisyData.CellV_Struct[4*a + 3] = ReadLTC6811Data();
+    }
+    SLAVE_CS_OUT |= 0x01;                           // sets bitfield to 1, pin is OUTPUT HIGH
+
+
+    //Cycle through each structure and compute cell voltage in V as a double
+    //Saves cell voltages as doubles and float in incrementing order. (Cell 14 would be in the 14th index of the float and double array)
+    for(a = 0; a < NUMSLAVES; a++){     //Loop through each slave
+        for(i = 0; i<4; i++){           //Loop through each register containing cell voltages
+            for(j = 0; j<3; j++){       //Loop through each 16 bit word representing a cell voltage
+                CellV.CellV_float[12*a + 3*i + j] = (DaisyData.CellV_Struct[4*a + i].data16[j])/10000.0;
+                CellV.CellV_16bit[12*a + 3*i + j] = (DaisyData.CellV_Struct[4*a + i].data16[j]);
+            }
+        }
+    }
+    return CellV;
+}
+
+
+GPIOVoltages ReadGPIOVoltages(void){
+
+    GPIOVoltages GPIOV;
+    BMSDaisyData DaisyData;
+    uint8_t a,i,j;
+
+    uint16_t cmd = RDAUXA;                                   //Read Auxillary Register B
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        DaisyData.GPIOV_Struct[2*a + 1] = ReadLTC6811Data();    //Save GPIO1-3 Data
+    }
+    SLAVE_CS_OUT |= 0x01;                           // sets bitfield to 1, pin is OUTPUT HIGH
+    cmd = RDAUXB;                                   //Read Auxillary Register B
+    SendLTC6811Cmd(&cmd);
+    SendUCA0byte(0xff);
+    for(a = 0; a<NUMSLAVES;a++){
+        DaisyData.GPIOV_Struct[2*a + 2] = ReadLTC6811Data();    //Save GPIO4-5 & VREF data
+    }
+    SLAVE_CS_OUT |= 0x01;                           // sets bitfield to 1, pin is OUTPUT HIGH
+
+    //Cycle through each GPIO struct and computer the GPIO V as a double and float
+    //Save the GPIO Voltages as doubles in incrementing order
+    for(a = 0; a < NUMSLAVES; a++){
+        for(i = 0; i<2; i++ ){
+            for(j = 0; j<3; j++){
+                GPIOV.GPIOV_float[6*a + 3*i + j] = DaisyData.GPIOV_Struct[2*a + i].data16[j]/10000.0;
+                GPIOV.GPIOV_16bit[6*a + 3*i + j] = DaisyData.GPIOV_Struct[2*a + i].data16[j];
+            }
+        }
+    }
+    return GPIOV;
+}
+
+
+void LTC6811ADCV(void){
+    uint16_t wrcmd = ADCV;
+    SendLTC6811Cmd(&wrcmd);
+    uint8_t sixbytes[6] = {HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE};
+    WriteLTC6811Data(sixbytes,6);
+}
+
+void LTC6811ADAX(void){
+    uint16_t wrcmd = ADAX;
+    SendLTC6811Cmd(&wrcmd);
+    uint8_t sixbytes[6] = {HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE,HIGHBYTE};
+    WriteLTC6811Data(sixbytes,6);
+}
+
+OverVoltage CheckDiff(uint16_t minV, uint16_t delta,struct CellVoltages *CellV){
+
+    OverVoltage OverV;
+    uint8_t i = 0;
+    uint8_t a = 0;
+
+    //Populate OverV structure with default values
+    while(i < 12*NUMSLAVES){
+        OverV.status[i] = 0;
+        OverV.Vdiff[i] = 5.0;
+        i++;
+    }
+    OverV.status16[0] = 0;
+    OverV.status16[1] = 0;
+
+
+    //Determine the minimum cell voltage value of the cell
+    uint16_t min = CellV->CellV_16bit[0];
+    for(i = 1; i<12*NUMSLAVES -1; i++){
+        if(CellV->CellV_16bit[i] < min && CellV->CellV_16bit[i] > 50 ){  //If its = 0, ignore, this means less than 12 cells are connected
+            min = CellV->CellV_16bit[i];
+        }
+    }
+
+    //Determine which cells are greater than delta volts above the minimum cell voltage
+    if(min > minV){
+        for(a = 0; a < NUMSLAVES; a++){                                                         //Loops through data from each daisy chained device
+            for(i = 0; i<12; i++){                                                              //Loops through each cell in that daisy chained device
+                if(CellV->CellV_16bit[i+12*a] > 10000){                                            //Check to see if that cell is connected by seeing if the cell voltage is greater than 0.005 V. For example, if there are only 10 cells being monitored, 2 cells in the stack will read 0 volts.
+                    OverV.Vdiff[i+12*a] = (double)(CellV->CellV_16bit[i+12*a] - min)/10000.0;   //Adds the voltage difference between that cell and the min celll to the Vdiff array, even if that voltage is not out of balance.
+                    if(CellV->CellV_16bit[i+12*a] - delta > min){                               //Checks to see if that cell is out of balance
+                        OverV.status[i+12*a] = 1;                                               //Setting it to 1 means that this cell needs to be balanced
+                        OverV.status16[a] = OverV.status16[a] + (BIT0 << i);                    //Sets the bit corresponding to that cell
+                    }
+                }
+            }
+        }
+    }
+    OverV.min = min/10000.0;
+    return OverV;
+}
+
+//Balances
+void BalanceCells(OverVoltage *OverV){
+    uint8_t a;
+    uint8_t configA[6] = {0b00000110,0x00,0x00,0x00,0x00,0x00};     //Create 6 bvyte data array that will be written to CONFIG REGISTER A
+    uint16_t cmd = WRCFGA;                                          //Send Write Config. Reg. A Command
+    SendLTC6811Cmd(&cmd);
+    for(a = NUMSLAVES; a > 0; a--){                                 //When writing to Daisy chain, write to top of stack first, then decrement count to the primary stack.
+        configA[4] = ((OverV->status16[a-1]) >> 0 & 0xff);
+        configA[5] = ((OverV->status16[a-1]) >> 8 & 0xff);
+        configA[5] &= ~0b11110000;
+        WriteLTC6811Data(configA,6);                                //passing pointer to
+    }
+    SLAVE_CS_OUT |= 0x01;                                           // sets bitfield to 1, pin is OUTPUT HIGH. This tells the 6820 that communication is over
+}
+
+//Send a 16 bit command
+void SendLTC6811Cmd(uint16_t *cmdptr){
+
+    //Create 8bit int array for command
+    uint16_t cmd = *cmdptr;
+    uint8_t cmd0 = ((cmd >> 8) & 0x0000ff);
+    uint8_t cmd1 = ((cmd >> 0) & 0x0000ff);
+    uint8_t cmdarr[2] = {cmd0,cmd1};
+
+    //Calculate PEC for command
+    uint16_t cmdPEC = pec15(cmdarr,sizeof(cmdarr));
+    uint8_t cmdPEC0 = ((cmdPEC >> 8) & 0xff);
+    uint8_t cmdPEC1 = ((cmdPEC >> 0) & 0xff);
+
+    //Send command
+    SLAVE_CS_OUT &= ~(0x01);            //clears bitfield, pin is OUTPUT LOW
+    __delay_cycles(20);
+    SendUCA0byte(cmd0);
+    SendUCA0byte(cmd1);
+    SendUCA0byte(cmdPEC0);
+    SendUCA0byte(cmdPEC1);
+}
+
+//Read Incoming Data
+BMSData ReadLTC6811Data(void){
+
+    BMSData Data;
+
+    //Read Incoming 6 Byte Data Word
+    uint8_t i;
+    for(i = 0; i<3; i++){
+        Data.data8[2*i]   = SendUCA0byte(0xff);
+        Data.data8[2*i+1] = SendUCA0byte(0xff);
+        Data.data16[i] = ((Data.data8[2*i+1] << 8) & 0xff00);
+        Data.data16[i] = Data.data16[i] + Data.data8[2*i];
+    }
+
+    //Receive Incoming PEC
+    Data.PEC[0] = SendUCA0byte(0xff);
+    Data.PEC[1] = SendUCA0byte(0xff);
+
+    //Calculate PEC for Incoming Data
+    uint16_t DataInPEC = pec15(Data.data8,sizeof(Data.data8));
+    Data.DataInPEC[0] = ((DataInPEC >> 8) & 0xff);
+    Data.DataInPEC[1] = ((DataInPEC >> 0) & 0xff);
+
+    //Check to see if PEC's match
+    if(Data.DataInPEC[0] == Data.PEC[0] && Data.DataInPEC[1] == Data.PEC[1]){
+        Data.pass[0] = true;
+    }else{
+        Data.pass[0] = false;
+        //UARTPrintString("Error: Calculated data PEC does not match received data PEC\n\r");
+    }
+
+    while(UCA0STAT&UCBUSY);
+    return Data;
+}
+
+
+//Write data to 6811
+void WriteLTC6811Data(uint8_t *data, uint8_t data_length){
+
+    //Calculate PEC for Data
+    uint16_t dataPEC = pec15(data, data_length);
+    uint8_t dataPEC0 = ((dataPEC >> 8) & 0xff);
+    uint8_t dataPEC1 = ((dataPEC >> 0) & 0xff);
+
+    //Send Data and PEC
+    int i;
+    for(i = 0; i<data_length; i++){
+        SendUCA0byte(data[i]);
+    }
+    SendUCA0byte(dataPEC0);
+    SendUCA0byte(dataPEC1);
+
+    while(UCA0STAT&UCBUSY);
+    __delay_cycles(1000);
+    //SLAVE_CS_OUT |= 0x01;               // sets bitfield to 1, pin is OUTPUT HIGH
+}
+
+
+

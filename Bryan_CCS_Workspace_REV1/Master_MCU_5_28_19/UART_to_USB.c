@@ -46,7 +46,6 @@ char UARTReadChar(){
     while(UCA1STAT&UCBUSY);
     c = UCA1RXBUF;
     return c;
-
 }
 
 void initUART(){

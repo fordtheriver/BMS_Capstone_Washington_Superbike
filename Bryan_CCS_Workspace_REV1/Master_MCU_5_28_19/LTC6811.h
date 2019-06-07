@@ -37,7 +37,7 @@
 
 #define NUMSLAVES 2                     //This defines the amount of 6811 borads daisy chained in the BMS. This firmware handles 1 - n daisy chained 6811
 #define MINBALANCEV 3400                //This is the minimum cell voltage where the BMS will begin balancing, in millivolts.
-#define MINBALANCEDELTA 100               //This is the minimum difference between a cell and the minimum cell required to balance the cell, in millivolts
+#define MINBALANCEDELTA 10               //This is the minimum difference between a cell and the minimum cell required to balance the cell, in millivolts
 
 #define HIGHBYTE 0xff
 
@@ -45,17 +45,12 @@
 #define SLAVE_CS_DIR    P2DIR
 
 typedef struct BMSData{            // data struct for one register group on the LTC6811
-    uint8_t data8[6];
-    uint16_t data16[3];
-    uint8_t PEC[2];
-    uint8_t DataInPEC[2];
-    bool pass[1];                   //condition for PEC continuity
+    uint8_t data8[6*NUMSLAVES];
+    uint16_t data16[3*NUMSLAVES];
+    uint8_t PEC[2*NUMSLAVES];
+    uint8_t DataInPEC[2*NUMSLAVES];
+    bool pass[NUMSLAVES];                   //condition for PEC continuity
 }BMSData;
-
-typedef struct BMSDaisyData{
-    BMSData CellV_Struct[4*NUMSLAVES];
-    BMSData GPIOV_Struct[2*NUMSLAVES];
-}BMSDaisyData;
 
 typedef struct CellVoltages{
     double CellV_float[12*NUMSLAVES];
@@ -79,13 +74,16 @@ CellVoltages ReadCellVoltages(void);
 GPIOVoltages ReadGPIOVoltages(void);
 void LTC6811ADCV(void);
 void LTC6811ADAX(void);
-OverVoltage CheckDiff(uint16_t minV, uint16_t delta,CellVoltages *CellV);
+OverVoltage CheckCellDiff(CellVoltages *CellV);
 void BalanceCells(OverVoltage *OverV);
+uint8_t getTemp(uint16_t Vtemperature);
 
 //Low Level Functions
 void SendLTC6811Cmd(uint16_t *cmdptr);
 BMSData ReadLTC6811Data(void);
-void WriteLTC6811Data(uint8_t *data, uint8_t data_length);
+void WriteLTC6811Data(uint8_t *data);
+
+
 
 
 #endif /* LTC6812_H_ */

@@ -2,12 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="BMSDaisyData" key="selection"/>
+		<item value="WriteLT" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="WriteLt"/>
+			<item value="writelt"/>
+			<item value="write6"/>
+			<item value="checkd"/>
+			<item value="checkc"/>
+			<item value="SendUCA0byte"/>
 			<item value="CellVoltages"/>
 			<item value="bsm"/>
 			<item value="BSM"/>
@@ -17,6 +23,7 @@
 			<item value="balan"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SendUCA0Byte"/>
 			<item value="BMSDaisyData"/>
 			<item value="BMS"/>
 			<item value="BMSData"/>
@@ -29,7 +36,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="826" key="DIALOG_X_ORIGIN"/>
-		<item value="170" key="DIALOG_Y_ORIGIN"/>
+		<item value="825" key="DIALOG_X_ORIGIN"/>
+		<item value="71" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -3,7 +3,7 @@
 
 
 //Send a byte to the SPI register
-uint8_t SendUCA0byte(uint8_t val){
+uint8_t SendUCA0Byte(uint8_t val){
     while (UCA0STAT&UCBUSY);              // Wait until TX buffer has been shifted out
     UCA0TXBUF = val;
     return UCA0RXBUF;
