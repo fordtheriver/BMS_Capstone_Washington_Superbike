@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Master_MCU_5_27_20,org.eclipse.launchbar.core.descriptorType.default\:Master_MCU_5_4_19,org.eclipse.launchbar.core.descriptorType.default\:Master_MCU,org.eclipse.launchbar.core.descriptorType.default\:Master_MCU_5_18_19,org.eclipse.launchbar.core.descriptorType.default\:Master_MCU_5_28_19
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Master_MCU,org.eclipse.launchbar.core.descriptorType.default\:Master_MCU_5_18_19,org.eclipse.launchbar.core.descriptorType.default\:Master_MCU_5_28_19,org.eclipse.launchbar.core.descriptorType.default\:Master_MCU_6_08_19
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Master_MCU/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:Master_MCU/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

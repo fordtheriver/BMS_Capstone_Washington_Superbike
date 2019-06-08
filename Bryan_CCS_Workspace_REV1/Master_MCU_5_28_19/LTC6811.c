@@ -168,16 +168,17 @@ void BalanceCells(OverVoltage *OverV){
     uint16_t cmd = WRCFGA;                                          //Send Write Config. Reg. A Command
     SLAVE_CS_OUT &= ~(0x01);                                        //clears bitfield, pin is OUTPUT LOW
     SendLTC6811Cmd(&cmd);
-    for(a = NUMSLAVES; a > 0; a--){                                 //When writing to Daisy chain, write to top of stack first, then decrement count to the primary stack.
+    for(a = NUMSLAVES; a > 0; a--){
+        SLAVE_CS_OUT &= ~(0x01);                                        //clears bitfield, pin is OUTPUT LOW//When writing to Daisy chain, write to top of stack first, then decrement count to the primary stack.
         configA[4] = ((OverV->status16[a-1]) >> 0 & 0xff);
         configA[5] = ((OverV->status16[a-1]) >> 8 & 0xff);
         //configA[4] = 0xff;
         //configA[5] = 0xff;
         //configA[5] &= ~0b11110000;
         WriteLTC6811Data(configA);                                //passing pointer to
+        SLAVE_CS_OUT |= 0x01;                                           // sets bitfield to 1, pin is OUTPUT HIGH. This tells the 6820 that communication is over
     }
-    SLAVE_CS_OUT |= 0x01;                                           // sets bitfield to 1, pin is OUTPUT HIGH. This tells the 6820 that communication is over
-}
+  }
 
 uint8_t getTemp(uint16_t Vtemperature){
     /*
