@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project Master_MCU_5_28_19 ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 2 all -O 
+ 
+gmake[1]: 'Master_MCU_5_28_19.out' is up to date.
+
+**** Build Finished ****

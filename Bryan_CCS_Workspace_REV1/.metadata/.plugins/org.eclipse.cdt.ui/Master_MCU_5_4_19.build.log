@@ -1,0 +1,26 @@
+
+**** Build of configuration Debug for project Master_MCU_5_4_19 ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 2 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="C:/ti/ccs900/ccs/ccs_base/msp430/include" --include_path="C:/Users/bryan/Desktop/BMS Capstone/LaunchPad/BMS_Capstone_Washington_Superbike/Bryan_CCS_Workspace_REV1/Master_MCU_5_4_19" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-msp430_18.12.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=full --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 59: error #29: expected an expression
+"../main.c", line 60: error #54: expected a ":"
+"../main.c", line 60: warning #128-D: expected a statement
+"../main.c", line 62: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 72: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 97: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 98: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 101: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 103: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 43: remark #1535-D: (ULP 8.1) variable "NextState" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+2 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

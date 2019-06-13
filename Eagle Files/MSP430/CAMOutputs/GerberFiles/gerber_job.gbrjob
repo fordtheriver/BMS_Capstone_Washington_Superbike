@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2019-05-22T20:16:49Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.3.0"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "MSP430_REV1_5_21_19_NEW"
+        },
+        "Owner": "Nathan Williams <nwilli@uw.edu>",
+        "Size": {
+            "X": 109.22,
+            "Y": 71.12
+        }
+    }
+}

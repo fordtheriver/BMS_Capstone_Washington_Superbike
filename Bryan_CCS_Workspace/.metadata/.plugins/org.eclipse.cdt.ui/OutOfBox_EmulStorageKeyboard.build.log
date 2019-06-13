@@ -1,9 +1,0 @@
-
-**** Build of configuration Debug for project OutOfBox_EmulStorageKeyboard ****
-
-"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
- 
-gmake[1]: 'OutOfBox_EmulStorageKeyboard.out' is up to date.
-gmake[1]: Nothing to be done for 'secondary-outputs'.
-
-**** Build Finished ****
